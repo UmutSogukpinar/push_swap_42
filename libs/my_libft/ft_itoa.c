@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int static	ft_digit_len(int n)
+static int	ft_digit_len(int n)
 {
 	int	i;
 
@@ -17,7 +17,7 @@ int static	ft_digit_len(int n)
 	return (i);
 }
 
-char static	*ft_itoa_negatives(int n, int digit_len)
+static char	*ft_itoa_negatives(int n, int digit_len)
 {
 	char	*arr;
 

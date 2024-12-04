@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int static	ft_is_set(char c, char const *set)
+static int	ft_is_set(char c, char const *set)
 {
 	int	i;
 
@@ -14,7 +14,7 @@ int static	ft_is_set(char c, char const *set)
 	return (0);
 }
 
-int static	ft_trimlen(char const *s1, char const *set)
+static int	ft_trimlen(char const *s1, char const *set)
 {
 	int	j;
 	int	counter;

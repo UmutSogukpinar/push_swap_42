@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char static	*ft_zero_exception_handle(void)
+static char	*ft_zero_exception_handle(void)
 {
 	char	*arr;
 
