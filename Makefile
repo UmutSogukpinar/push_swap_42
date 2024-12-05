@@ -1,6 +1,9 @@
 NAME = push_swap
 
-SRCS = main.c
+ACT_DIR = srcs/actions
+LIB_DIR = ./libs
+
+SRCS = srcs/main.c
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
@@ -13,7 +16,7 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	${MAKE} -C ./libs/my_libft
 	${MAKE} -C ./libs/my_printf
-	${CC} ${CFLAGS} ${OBJS} ./libs/my_libft/libft.a ./libs/my_printf/libftprintf.a -o ${NAME}
+	${CC} ${CFLAGS} ${OBJS} ${LIB_DIR}/my_libft/libft.a ${LIB_DIR}/my_printf/libftprintf.a -o ${NAME}
 
 clean: 
 	${MAKE} -C ./libs/my_libft fclean
