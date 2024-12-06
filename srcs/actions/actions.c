@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 20:38:00 by umut              #+#    #+#             */
-/*   Updated: 2024/12/06 21:51:07 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/07 00:26:22 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,38 @@ void	push(t_list **source, t_list **target)
 	*source = new_head;
 	source_head->next = NULL;
 	ft_lstadd_front(target, source_head);
+}
+
+void	swap(t_list **list)
+{
+	t_list	*first_node;
+	t_list	*second_node;
+
+	if (ft_lstsize(*list) <= 1)
+		return ;
+	first_node = *list;
+	second_node = first_node -> next;
+	first_node -> next = second_node -> next;
+	second_node -> next = first_node;
+	*list = second_node;
+}
+
+void	rotate(t_list **list)
+{
+	t_list	*first_node;
+	t_list	*second_node;
+	t_list	*last_node;
+
+	if (ft_lstsize(*list) <= 1)
+		return ;
+	first_node = *list;
+	second_node = first_node -> next;
+	last_node = *list;
+	while (last_node -> next)
+		last_node = last_node -> next;
+	*list = second_node;
+	last_node -> next = first_node;
+	first_node -> next = NULL;
 }
 
 //int main()
@@ -53,8 +85,7 @@ void	push(t_list **source, t_list **target)
 //		current_a = current_a->next;
 //	}
 
-//	push(&stack_a, &stack_b);
-//	push(&stack_a, &stack_b);
+//	rotate(&stack_a);
 
 //	current_a = stack_a;
 
@@ -66,13 +97,13 @@ void	push(t_list **source, t_list **target)
 //		current_a = current_a->next;
 //	}
 
-//	current_a = stack_b;
+	//current_a = stack_b;
 
-//	ft_printf("stack_b içeriği after push:\n");
+	//ft_printf("stack_b içeriği after push:\n");
 
-//	while (current_a)
-//	{
-//		ft_printf("%s\n", (char *)current_a->content);
-//		current_a = current_a->next;
-//	}
+	//while (current_a)
+	//{
+	//	ft_printf("%s\n", (char *)current_a->content);
+	//	current_a = current_a->next;
+	//}
 //}
