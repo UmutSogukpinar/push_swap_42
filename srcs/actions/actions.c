@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 20:38:00 by umut              #+#    #+#             */
-/*   Updated: 2024/12/07 00:26:22 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/07 00:38:58 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,27 @@ void	rotate(t_list **list)
 	first_node -> next = NULL;
 }
 
+void	reverse_rotate(t_list **list)
+{
+	t_list	*last_node;
+	t_list	*scnd_to_last_node;
+
+	if (ft_lstsize(*list) <= 1)
+		return ;
+	if (ft_lstsize(*list) == 2)
+	{
+		rotate(list);
+		return ;
+	}
+	scnd_to_last_node = *list;
+	while (scnd_to_last_node -> next -> next)
+		scnd_to_last_node = scnd_to_last_node -> next;
+	last_node = scnd_to_last_node -> next;
+	last_node -> next = *list;
+	scnd_to_last_node -> next = NULL;
+	*list = last_node;
+}
+
 //int main()
 //{
 //	t_list *stack_a;
@@ -70,7 +91,7 @@ void	rotate(t_list **list)
 
 //	ft_lstadd_back(&stack_a, node1);
 //	ft_lstadd_back(&stack_a, node2);
-//	ft_lstadd_back(&stack_a, node3);
+//	//ft_lstadd_back(&stack_a, node3);
 
 //	if (!stack_a)
 //	{
@@ -85,7 +106,7 @@ void	rotate(t_list **list)
 //		current_a = current_a->next;
 //	}
 
-//	rotate(&stack_a);
+//	reverse_rotate(&stack_a);
 
 //	current_a = stack_a;
 
@@ -97,13 +118,13 @@ void	rotate(t_list **list)
 //		current_a = current_a->next;
 //	}
 
-	//current_a = stack_b;
+//	current_a = stack_b;
 
-	//ft_printf("stack_b içeriği after push:\n");
+//	ft_printf("stack_b içeriği after push:\n");
 
-	//while (current_a)
-	//{
-	//	ft_printf("%s\n", (char *)current_a->content);
-	//	current_a = current_a->next;
-	//}
+//	while (current_a)
+//	{
+//		ft_printf("%s\n", (char *)current_a->content);
+//		current_a = current_a->next;
+//	}
 //}
