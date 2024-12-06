@@ -6,20 +6,20 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 20:38:00 by umut              #+#    #+#             */
-/*   Updated: 2024/12/06 21:34:51 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/06 21:51:07 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-void push(t_list **source, t_list **target)
+void	push(t_list **source, t_list **target)
 {
-	t_list *source_head;
-	t_list *new_head;
+	t_list	*source_head;
+	t_list	*new_head;
 
 	if (!(source && *source))
-		return;
+		return ;
 	source_head = *source;
 	new_head = (*source)->next;
 	*source = new_head;
