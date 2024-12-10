@@ -6,13 +6,13 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:29:34 by umut              #+#    #+#             */
-/*   Updated: 2024/12/09 23:31:11 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/10 20:21:47 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_absolute_value(int num)
+int	get_abs(int num)
 {
 	if (num >= 0)
 		return (num);
@@ -31,7 +31,7 @@ int	get_average(t_list *list)
 		return (0);
 	while (list)
 	{
-		acc += (int) (list -> content);
+		acc += (int)(list -> content);
 		list = list -> next;
 	}
 	return (acc / stack_size);
@@ -48,7 +48,7 @@ int	get_pivot(t_list *list)
 	while (list)
 	{
 		list_value = (int) list -> content;
-		if (get_absolute_value(list_value - median) < get_absolute_value(pivot - median))
+		if (get_abs(list_value - median) < get_abs(pivot - median))
 			pivot = list_value;
 		list = list -> next;
 	}

@@ -6,12 +6,12 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:17:54 by umut              #+#    #+#             */
-/*   Updated: 2024/12/10 20:17:55 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/10 20:26:56 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_HELPERS_H
-# define FT_HELPSERS_H
+# define FT_HELPERS_H
 
 # include <stdarg.h>
 
