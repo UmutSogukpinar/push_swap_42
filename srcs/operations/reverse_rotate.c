@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:00:26 by umut              #+#    #+#             */
-/*   Updated: 2024/12/10 20:02:28 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/10 20:05:44 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	reverse_rotate_b(t_list **list)
 	ft_printf("rrb\n");
 }
 
-void	reverse_rotate_a(t_list **list_one, t_list **list_two)
+void	reverse_rotate_both(t_list **list_one, t_list **list_two)
 {
 	reverse_rotate(list_one);
 	reverse_rotate(list_two);
