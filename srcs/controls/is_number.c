@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:16:22 by umut              #+#    #+#             */
-/*   Updated: 2024/12/17 18:09:44 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 19:47:08 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int ft_is_number(char *str)
 	int	i;
 
 	i = 0;
+	if (str[i] == '\0')
+		return (0);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] != '\0')
@@ -32,6 +34,8 @@ int	*ft_create_int_ptr(char *str)
 {
 	int	*new_value;
 
+	if (!ft_is_number(str))
+		return (NULL);
 	new_value = malloc(sizeof(int));
 	if (!new_value)
 		return (NULL);
