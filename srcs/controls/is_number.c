@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:16:22 by umut              #+#    #+#             */
-/*   Updated: 2024/12/17 19:47:08 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 20:15:19 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ft_is_number(char *str)
 	return (1);
 }
 
-int	*ft_create_int_ptr(char *str)
+int	*create_int_ptr(char *str)
 {
 	int	*new_value;
 

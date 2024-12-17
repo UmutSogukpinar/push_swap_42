@@ -2,10 +2,17 @@ NAME = push_swap
 
 ACT_DIR = srcs/actions
 CONT_DIR = srcs/controls
+OPT_DIR = srcs/operations
+SORT_DIR = srcs/sorting
 LIB_DIR = ./libs
 
-SRCS = push_swap.c \
-		${CONT_DIR}/is_number.c
+SRCS = main.c \
+		${CONT_DIR}/is_number.c \
+		${ACT_DIR}/actions.c \
+		${SORT_DIR}/sort_small.c \
+		${SORT_DIR}/sort.c \
+		${OPT_DIR}/swap.c
+
 OBJS = ${SRCS:.c=.o}
 
 CC = cc

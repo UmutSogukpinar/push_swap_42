@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:01:18 by umut              #+#    #+#             */
-/*   Updated: 2024/12/17 19:35:53 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 21:07:29 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 #include "controls.h"
+#include "sort.h"
 
 t_list	*init_stack(char **args)
 {
@@ -25,7 +26,7 @@ t_list	*init_stack(char **args)
 	new_stack = NULL;
 	while (args[++i])
 	{
-		new_value = ft_create_int_ptr(args[i]);
+		new_value = create_int_ptr(args[i]);
 		if (!new_value)
 		{
 			ft_lstclear(&new_stack, free);
@@ -46,16 +47,19 @@ t_list	*init_stack(char **args)
 int	main(int arg_number, char **args)
 {
 	t_list	*stack_a;
-	//t_list	*stack_b;
+	t_list	*stack_b;
 
 	if (arg_number <= 1)
 		return (0);
 	stack_a = init_stack(args);
-	//stack_b = NULL;
+	stack_b = NULL;
 	if (!stack_a)
 	{
 		ft_printf("Error\n");
 		return (1);
 	}
 	ft_display_int_list(stack_a);
+	sort(&stack_a, &stack_b);
+	ft_display_int_list(stack_a);
+	ft_lstclear(&stack_a, free);
 }
