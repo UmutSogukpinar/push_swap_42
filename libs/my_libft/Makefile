@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I../my_printf
 AR = ar rcs
 RM = rm -f
 FILES =	ft_atoi.c \
@@ -46,18 +46,15 @@ BONUS = ft_lstadd_front.c \
 		ft_lstnew.c \
 		ft_lstsize.c \
 		ft_lstclear.c \
-		ft_lstadd_back.c
+		ft_lstadd_back.c \
+		ft_lst_display.c
 
 OBJECTS = $(FILES:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)
 
 all: ${NAME}
 
-$(NAME): $(OBJECTS)
-	$(AR) $(NAME) $(OBJECTS)
-
-bonus: $(OBJECTS) $(BONUS_OBJ)
-
+$(NAME): $(OBJECTS) $(BONUS_OBJ)
 	$(AR) $(NAME) $(OBJECTS) $(BONUS_OBJ)
 
 clean:

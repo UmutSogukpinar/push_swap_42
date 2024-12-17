@@ -6,13 +6,13 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:15:09 by umut              #+#    #+#             */
-/*   Updated: 2024/12/10 20:15:10 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 19:00:36 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void static	ft_lstmap_helper_func(t_list **head, t_list **lst, t_list *new_node)
+static void	ft_lstmap_helper_func(t_list **head, t_list **lst, t_list *new_node)
 {
 	t_list	*temp;
 
