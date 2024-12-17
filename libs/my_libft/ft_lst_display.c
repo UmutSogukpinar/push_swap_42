@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 19:33:07 by umut              #+#    #+#             */
-/*   Updated: 2024/12/17 19:34:44 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 23:03:43 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 void	ft_display_int_list(t_list *list)
 {
-    int i = 0;
+	int	i;
+
+	i = 0;
 	while (list != NULL)
 	{
 		if (list->content)

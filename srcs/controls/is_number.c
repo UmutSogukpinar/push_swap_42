@@ -6,13 +6,13 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:16:22 by umut              #+#    #+#             */
-/*   Updated: 2024/12/17 20:15:19 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 23:04:39 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_is_number(char *str)
+int	ft_is_number(char *str)
 {
 	int	i;
 
