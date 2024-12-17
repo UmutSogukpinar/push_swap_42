@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 20:16:21 by umut              #+#    #+#             */
-/*   Updated: 2024/12/10 20:16:22 by umut             ###   ########.fr       */
+/*   Created: 2024/12/17 20:13:28 by umut              #+#    #+#             */
+/*   Updated: 2024/12/17 21:14:06 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sort.h"
+#include "operations.h"
 
-char	*ft_strdup(const char *s1)
+void	sort_for_two(t_list **stack_a)
 {
-	int		i;
-	int		len;
-	char	*new;
+	t_list	*head;
+	t_list	*tail;
+	int		head_value;
+	int		tail_value;
 
-	len = ft_strlen(s1);
-	new = malloc((len + 1) * sizeof(char));
-	if (new == NULL)
-		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		new[i] = s1[i];
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
+	head = *stack_a;
+	tail = head -> next;
+	head_value = *(int *)head -> content;
+	tail_value = *(int *)tail -> content;
+	if (head_value <= tail_value)
+		return ;
+	swap_a(stack_a);
 }

@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   is_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 20:16:56 by umut              #+#    #+#             */
-/*   Updated: 2024/12/10 20:16:57 by umut             ###   ########.fr       */
+/*   Created: 2024/12/15 23:16:22 by umut              #+#    #+#             */
+/*   Updated: 2024/12/17 20:15:19 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int ft_is_number(char *str)
 {
-	size_t	i;
-	size_t	n_i;
-	size_t	needle_len;
+	int	i;
 
 	i = 0;
-	needle_len = ft_strlen(needle);
-	if (ft_strlen(needle) == 0)
-		return ((char *)haystack);
-	while (i < len && haystack[i] != '\0')
+	if (str[i] == '\0')
+		return (0);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] != '\0')
 	{
-		n_i = 0;
-		while ((haystack[i + n_i] == needle[n_i]) && (i + n_i < len))
-		{
-			if (n_i == needle_len - 1)
-				return ((char *)&haystack[i]);
-			n_i++;
-		}
+		if (!ft_isdigit((int) str[i]))
+			return (0);
 		i++;
 	}
-	return (NULL);
+	return (1);
+}
+
+int	*create_int_ptr(char *str)
+{
+	int	*new_value;
+
+	if (!ft_is_number(str))
+		return (NULL);
+	new_value = malloc(sizeof(int));
+	if (!new_value)
+		return (NULL);
+	*new_value = ft_atoi(str);
+	return (new_value);
 }

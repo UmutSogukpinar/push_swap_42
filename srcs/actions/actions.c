@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 20:38:00 by umut              #+#    #+#             */
-/*   Updated: 2024/12/07 00:38:58 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/17 20:49:14 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	swap(t_list **list)
 	t_list	*first_node;
 	t_list	*second_node;
 
-	if (ft_lstsize(*list) <= 1)
+	if (!*list || !(*list)->next)
 		return ;
 	first_node = *list;
 	second_node = first_node -> next;
