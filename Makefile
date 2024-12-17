@@ -9,10 +9,14 @@ LIB_DIR = ./libs
 SRCS = main.c \
 		${CONT_DIR}/is_number.c \
 		${ACT_DIR}/actions.c \
-		${SORT_DIR}/sort_two.c \
+		${SORT_DIR}/sort_mini.c \
+		${SORT_DIR}/sort_three_helper.c \
 		${SORT_DIR}/sort.c \
-		${SORT_DIR}/id_sorted.c \
-		${OPT_DIR}/swap.c
+		${SORT_DIR}/is_sorted.c \
+		${OPT_DIR}/swap.c \
+		${OPT_DIR}/push.c \
+		${OPT_DIR}/rotate.c \
+		${OPT_DIR}/reverse_rotate.c \
 
 OBJS = ${SRCS:.c=.o}
 

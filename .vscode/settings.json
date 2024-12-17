@@ -2,6 +2,8 @@
 	"files.associations": {
 		"actions.h": "c",
 		"ft_printf.h": "c",
-		"ft_helpers.h": "c"
+		"ft_helpers.h": "c",
+		"operations.h": "c",
+		"libft.h": "c"
 	}
 }
