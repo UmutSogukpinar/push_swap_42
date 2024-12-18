@@ -6,14 +6,14 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:08:38 by umut              #+#    #+#             */
-/*   Updated: 2024/12/18 00:09:16 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/18 21:18:45 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-# include "libft.h"
+# include "actions.h"
 
 void	push_a(t_list **source, t_list **target);
 void	push_b(t_list **source, t_list **target);

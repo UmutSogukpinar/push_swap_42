@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three_helper.c                                :+:      :+:    :+:   */
+/*   sort_three_reverse_helper.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 23:06:39 by umut              #+#    #+#             */
-/*   Updated: 2024/12/18 11:30:14 by umut             ###   ########.fr       */
+/*   Created: 2024/12/18 10:30:05 by umut              #+#    #+#             */
+/*   Updated: 2024/12/18 11:23:42 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-void	sort_three_option_one(t_list **list)
+void	sort_three_reverse_option_one(t_list **stack)
 {
-	swap_a(list);
-	reverse_rotate_a(list);
+	swap_b(stack);
+	reverse_rotate_b(stack);
 }
 
-void	sort_three_option_two(t_list **list)
+void	sort_three_reverse_option_two(t_list **stack)
 {
-	reverse_rotate_a(list);
-	swap_a(list);
+	rotate_b(stack);
 }
 
-void	sort_three_option_three(t_list **list)
+void	sort_three_reverse_option_three(t_list **stack)
 {
-	swap_a(list);
+	reverse_rotate_b(stack);
 }
 
-void	sort_three_option_four(t_list **list)
+void	sort_three_reverse_option_four(t_list **stack)
 {
-	reverse_rotate_a(list);
+	swap_b(stack);
 }
 
-void	sort_three_option_five(t_list **list)
+void	sort_three_reverse_option_five(t_list **stack)
 {
-	rotate_a(list);
+	swap_b(stack);
+	rotate_b(stack);
 }

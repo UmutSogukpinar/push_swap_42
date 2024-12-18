@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three_helper.c                                :+:      :+:    :+:   */
+/*   fight_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/17 23:06:39 by umut              #+#    #+#             */
-/*   Updated: 2024/12/18 11:30:14 by umut             ###   ########.fr       */
+/*   Created: 2024/12/18 21:23:56 by umut              #+#    #+#             */
+/*   Updated: 2024/12/18 21:32:17 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "libft.h"
 
-void	sort_three_option_one(t_list **list)
+int	find_correct_index(int number, t_list *stack)
 {
-	swap_a(list);
-	reverse_rotate_a(list);
-}
+	int	i;
+	int	node_value;
 
-void	sort_three_option_two(t_list **list)
-{
-	reverse_rotate_a(list);
-	swap_a(list);
-}
-
-void	sort_three_option_three(t_list **list)
-{
-	swap_a(list);
-}
-
-void	sort_three_option_four(t_list **list)
-{
-	reverse_rotate_a(list);
-}
-
-void	sort_three_option_five(t_list **list)
-{
-	rotate_a(list);
+	i = 0;
+	while (stack)
+	{
+		node_value = *(int *)stack->content;
+		if (number > node_value)
+			return (i);
+		i++;
+		stack = stack -> next;
+	}
+	return (i);
 }
