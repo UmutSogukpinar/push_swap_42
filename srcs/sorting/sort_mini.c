@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 20:13:28 by umut              #+#    #+#             */
-/*   Updated: 2024/12/18 11:22:51 by umut             ###   ########.fr       */
+/*   Updated: 2024/12/18 21:15:44 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,4 @@ void	sort_for_three_reverse(t_list **stack)
 		sort_three_reverse_option_four(stack);
 	else if ((first_value > third_value) && (third_value > second_value))
 		sort_three_reverse_option_five(stack);
-
 }

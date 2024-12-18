@@ -7,18 +7,19 @@ SORT_DIR = srcs/sorting
 LIB_DIR = ./libs
 
 SRCS = main.c \
-		${CONT_DIR}/is_number.c \
 		${ACT_DIR}/actions.c \
+		${CONT_DIR}/is_number.c \
+		${CONT_DIR}/find_index.c \
+		${OPT_DIR}/swap.c \
+		${OPT_DIR}/push.c \
+		${OPT_DIR}/rotate.c \
+		${OPT_DIR}/reverse_rotate.c \
 		${SORT_DIR}/sort_mini.c \
 		${SORT_DIR}/sort_three_helper.c \
 		${SORT_DIR}/sort.c \
 		${SORT_DIR}/is_sorted.c \
 		${SORT_DIR}/sort_default.c \
 		${SORT_DIR}/sort_three_reverse_helper.c \
-		${OPT_DIR}/swap.c \
-		${OPT_DIR}/push.c \
-		${OPT_DIR}/rotate.c \
-		${OPT_DIR}/reverse_rotate.c \
 
 OBJS = ${SRCS:.c=.o}
 
