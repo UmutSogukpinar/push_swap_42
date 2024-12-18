@@ -13,6 +13,8 @@ SRCS = main.c \
 		${SORT_DIR}/sort_three_helper.c \
 		${SORT_DIR}/sort.c \
 		${SORT_DIR}/is_sorted.c \
+		${SORT_DIR}/sort_default.c \
+		${SORT_DIR}/sort_three_reverse_helper.c \
 		${OPT_DIR}/swap.c \
 		${OPT_DIR}/push.c \
 		${OPT_DIR}/rotate.c \
@@ -33,13 +35,11 @@ ${NAME}: ${OBJS}
 	${CC} ${CFLAGS} ${OBJS} ${LIB_DIR}/my_libft/libft.a ${LIB_DIR}/my_printf/libftprintf.a -o ${NAME}
 
 clean: 
-	${MAKE} -C ${LIB_DIR}/my_libft clean
-	${MAKE} -C ${LIB_DIR}/my_printf clean
+	${MAKE} -C ${LIB_DIR}/my_libft fclean
+	${MAKE} -C ${LIB_DIR}/my_printf fclean
 	${RM} ${OBJS}
 
 fclean: clean
-	${MAKE} -C ${LIB_DIR}/my_libft fclean
-	${MAKE} -C ${LIB_DIR}/my_printf fclean
 	${RM} ${NAME}
 
 re: fclean all
