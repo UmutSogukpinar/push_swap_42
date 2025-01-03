@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_default.c                                     :+:      :+:    :+:   */
+/*   update_way.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 23:16:50 by umut              #+#    #+#             */
-/*   Updated: 2025/01/04 00:36:21 by umut             ###   ########.fr       */
+/*   Created: 2025/01/04 00:01:44 by umut              #+#    #+#             */
+/*   Updated: 2025/01/04 00:35:54 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sort.h"
 #include "utils.h"
 
-void	sort_default(t_list **stack_a, t_list **stack_b)
+int		update_way(t_way *opt, t_list **stack_a, t_list **stack_b)
 {
-	t_way	*opt;
-	int		is_problem;
+	t_list	*move_list;
+	t_list	*temp;
 
-	opt = init_optimum_struc();
-	if (!opt)
-		shut_program(stack_a, stack_b);
-	stack_b_setup(stack_a, stack_b);
-	while (ft_lstsize(stack_a) > 3)
+	temp = *stack_a;
+	while (temp)
 	{
-		is_problem = update_way(opt, stack_a, stack_b);
-		if (is_problem != 0)
-			shut_program(stack_a, stack_b);
-		
+		find_way(opt, *stack_b, *(int *)(temp -> content));
+		temp = temp -> next;
 	}
+	return (0);	
+}
+
+void	find_way(t_way *opt, t_list *stack_b, int value)
+{
+	t_list	*temp_b;
+
+	temp_b = stack_b;
+	find_correct_index(value, stack_b);
+
 }

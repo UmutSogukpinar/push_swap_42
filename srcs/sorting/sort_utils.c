@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   controls.h                                         :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 23:33:02 by umut              #+#    #+#             */
-/*   Updated: 2024/12/18 22:32:55 by umut             ###   ########.fr       */
+/*   Created: 2025/01/04 00:21:07 by umut              #+#    #+#             */
+/*   Updated: 2025/01/04 00:28:52 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTROLS_H
-# define CONTROLS_H
+#include "operations.h"
+#include "sort.h"
 
-# include "libft.h"
-
-int		ft_is_number(char *str);
-int		*create_int_ptr(char *str);
-
-int		find_correct_index(int number, t_list *stack);
-
-#endif
+void	stack_b_setup(t_list **src, t_list **target)
+{
+	push_a(src, target);
+	push_a(src, target);
+	push_a(src, target);
+	sort_for_three_reverse(target);
+}

@@ -1,12 +1,13 @@
 NAME = push_swap
 
+SRCS_DIR = ./srcs
 ACT_DIR = srcs/actions
 UTIL_DIR = srcs/utils
 OPT_DIR = srcs/operations
 SORT_DIR = srcs/sorting
 LIB_DIR = ./libs
 
-SRCS = main.c \
+SRCS = 	$(SRCS_DIR)/main.c \
 		${ACT_DIR}/actions.c \
 		${UTIL_DIR}/is_number.c \
 		${UTIL_DIR}/find_index.c \

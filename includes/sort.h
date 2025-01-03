@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:36:22 by umut              #+#    #+#             */
-/*   Updated: 2025/01/03 23:30:43 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/04 00:36:21 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include "libft.h"
 
-typedef struct s_optimum_way
+typedef struct s_way
 {
 	int		move_num;
-	char	**move_array;
-}	t_optimum_way;
+	t_list	*move_list;
+}	t_way;
+
+void	shut_program(t_list **stack_a, t_list **stack_b);
 
 int		is_sorted(t_list *list);
 int		is_sorted_reverse(t_list *list);
@@ -42,5 +44,9 @@ void	sort_three_reverse_option_two(t_list **stack);
 void	sort_three_reverse_option_three(t_list **stack);
 void	sort_three_reverse_option_four(t_list **stack);
 void	sort_three_reverse_option_five(t_list **stack);
+
+int		update_way(t_way *opt, t_list **stack_a, t_list **stack_b);
+
+void	stack_b_setup(t_list **src, t_list **target);
 
 #endif

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_default.c                                     :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 23:16:50 by umut              #+#    #+#             */
-/*   Updated: 2025/01/04 00:36:21 by umut             ###   ########.fr       */
+/*   Created: 2024/12/15 23:33:02 by umut              #+#    #+#             */
+/*   Updated: 2025/01/03 23:58:46 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "utils.h"
+#ifndef CONTROLS_H
+# define CONTROLS_H
 
-void	sort_default(t_list **stack_a, t_list **stack_b)
-{
-	t_way	*opt;
-	int		is_problem;
+# include "libft.h"
+# include "sort.h"
 
-	opt = init_optimum_struc();
-	if (!opt)
-		shut_program(stack_a, stack_b);
-	stack_b_setup(stack_a, stack_b);
-	while (ft_lstsize(stack_a) > 3)
-	{
-		is_problem = update_way(opt, stack_a, stack_b);
-		if (is_problem != 0)
-			shut_program(stack_a, stack_b);
-		
-	}
-}
+int				ft_is_number(char *str);
+int				*create_int_ptr(char *str);
+
+int				find_correct_index(int number, t_list *stack);
+
+t_optimum_way	*init_optimum_struc();
+
+#endif

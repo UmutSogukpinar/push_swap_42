@@ -6,13 +6,12 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:01:18 by umut              #+#    #+#             */
-/*   Updated: 2024/12/19 00:32:21 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/03 23:56:56 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
-#include "controls.h"
+#include "utils.h"
 #include "sort.h"
 
 t_list	*init_stack(char **args)
