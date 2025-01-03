@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I../my_printf
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 FILES =	ft_atoi.c \
@@ -65,4 +65,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

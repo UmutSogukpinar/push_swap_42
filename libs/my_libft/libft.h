@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 20:17:26 by umut              #+#    #+#             */
-/*   Updated: 2024/12/17 19:34:50 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/03 23:25:46 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
-int		ft_put_number(long long num, char *base);
 
 /* ==================== FILEDESCRIPTOR FUNCTIONS ====================*/
 

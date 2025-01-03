@@ -4,6 +4,8 @@
 		"ft_printf.h": "c",
 		"ft_helpers.h": "c",
 		"operations.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"sort.h": "c",
+		"stddef.h": "c"
 	}
 }

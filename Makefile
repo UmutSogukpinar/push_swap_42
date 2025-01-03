@@ -1,15 +1,15 @@
 NAME = push_swap
 
 ACT_DIR = srcs/actions
-CONT_DIR = srcs/controls
+UTIL_DIR = srcs/utils
 OPT_DIR = srcs/operations
 SORT_DIR = srcs/sorting
 LIB_DIR = ./libs
 
 SRCS = main.c \
 		${ACT_DIR}/actions.c \
-		${CONT_DIR}/is_number.c \
-		${CONT_DIR}/find_index.c \
+		${UTIL_DIR}/is_number.c \
+		${UTIL_DIR}/find_index.c \
 		${OPT_DIR}/swap.c \
 		${OPT_DIR}/push.c \
 		${OPT_DIR}/rotate.c \
