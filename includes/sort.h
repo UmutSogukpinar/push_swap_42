@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:36:22 by umut              #+#    #+#             */
-/*   Updated: 2025/01/04 00:36:21 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/04 21:17:25 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ void	sort_three_reverse_option_five(t_list **stack);
 int		update_way(t_way *opt, t_list **stack_a, t_list **stack_b);
 
 void	stack_b_setup(t_list **src, t_list **target);
+void	stack_a_setup(t_list **stack_a);
+void	resend_to_a(t_list **stack_a, t_list **stack_b);
 
 #endif
