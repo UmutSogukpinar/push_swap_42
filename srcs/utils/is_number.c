@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:16:22 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 02:41:39 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/05 21:14:57 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,14 @@ int	is_smallest(t_list *stack_a, t_list *stack_b)
 	int	a_value;
 
 	b_value = (*(int *)(stack_b -> content));
-	a_value = (*(int *)(stack_a -> content));
-	return (a_value > b_value);
+	while (stack_a)
+	{
+		a_value = (*(int *)(stack_a -> content));
+		if (a_value < b_value)
+			return (0);
+		stack_a = stack_a -> next;
+	}
+	return (1);
 }
 
 int	is_biggest(t_list *stack_a, t_list *stack_b)

@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 20:51:09 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 18:43:49 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/05 21:15:29 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	resend_for_lower(t_list **stack_a, t_list **stack_b)
 			rotate_a(stack_a);
 		}
 		while (*stack_b && is_smallest(*stack_a, *stack_b))
-		{
+		{		
 			while (!is_sorted(*stack_a))
 				reverse_rotate_a(stack_a);
 			push_a(stack_b, stack_a);
