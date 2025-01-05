@@ -6,12 +6,13 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 23:16:50 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 11:37:18 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/05 18:44:01 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "utils.h"
+#include "operations.h"
 #include "ft_printf.h"
 void	sort_default(t_list **stack_a, t_list **stack_b)
 {
@@ -30,5 +31,6 @@ void	sort_default(t_list **stack_a, t_list **stack_b)
 	//}
 	stack_a_setup(stack_a);
 	resend_to_a(stack_a, stack_b);
-
+	while (!is_sorted(*stack_a))
+		reverse_rotate_a(stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:01:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/04 22:15:32 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/05 18:40:45 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	main(int arg_number, char **args)
 		return (1);
 	}
 	ft_display_int_list(stack_a);
+	ft_printf("\n");
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b);
 	ft_display_int_list(stack_a);

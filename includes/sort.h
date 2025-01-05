@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 20:36:22 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 11:32:25 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/05 17:57:23 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	resend_the_biggest(t_list **stack_a, t_list **stack_b);
 void	resend_the_smallest(t_list **stack_a, t_list **stack_b);
 void	resend_middles(t_list **stack_a, t_list **stack_b);
 void	resend_for_lower(t_list **stack_a, t_list **stack_b);
+void	resend_for_lower_utils(t_list **stack_a, t_list **stack_b);
 void	resend_for_upper(t_list **stack_a, t_list **stack_b);
 void	resend_for_upper_utils(t_list **stack_a, t_list **stack_b);
 #endif
