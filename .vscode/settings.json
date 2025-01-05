@@ -6,6 +6,7 @@
 		"operations.h": "c",
 		"libft.h": "c",
 		"sort.h": "c",
-		"stddef.h": "c"
+		"stddef.h": "c",
+		"utils.h": "c"
 	}
 }

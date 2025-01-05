@@ -22,6 +22,7 @@ SRCS = 	$(SRCS_DIR)/main.c \
 		${SORT_DIR}/sort_default.c \
 		${SORT_DIR}/find_way.c \
 		${SORT_DIR}/resend.c \
+		${SORT_DIR}/resend_utils.c \
 		${SORT_DIR}/sort_utils.c \
 		${SORT_DIR}/is_sorted.c \
 		${SORT_DIR}/sort_mini.c \

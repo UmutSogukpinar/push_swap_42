@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:16:22 by umut              #+#    #+#             */
-/*   Updated: 2025/01/04 22:28:47 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/05 02:41:39 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,14 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-int	is_in_middle(t_list *high, t_list *middle, t_list *low)
+int	is_smallest(t_list *stack_a, t_list *stack_b)
 {
-	if (!high || !middle || !low)
-		return (-1);
-	if ((*(int *)(high -> content)) > (*(int *)(middle -> content)))
-	{
-		if ((*(int *)(middle -> content)) > (*(int *)(low -> content)))
-			return (1);
-		else
-			return (-1);
-	}
-	else
-		return (-1);
+	int	b_value;
+	int	a_value;
+
+	b_value = (*(int *)(stack_b -> content));
+	a_value = (*(int *)(stack_a -> content));
+	return (a_value > b_value);
 }
 
 int	is_biggest(t_list *stack_a, t_list *stack_b)
