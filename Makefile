@@ -14,6 +14,7 @@ SRCS = 	$(SRCS_DIR)/main.c \
 		${UTIL_DIR}/find_index.c \
 		${UTIL_DIR}/get_tail.c \
 		${UTIL_DIR}/init.c \
+		${UTIL_DIR}/display.c \
 		${OPT_DIR}/swap.c \
 		${OPT_DIR}/push.c \
 		${OPT_DIR}/rotate.c \
@@ -21,6 +22,9 @@ SRCS = 	$(SRCS_DIR)/main.c \
 		${SORT_DIR}/sort.c \
 		${SORT_DIR}/sort_default.c \
 		${SORT_DIR}/find_way.c \
+		${SORT_DIR}/find_way_utils.c \
+		${SORT_DIR}/find_way_utils_two.c \
+		${SORT_DIR}/execute_way.c \
 		${SORT_DIR}/resend.c \
 		${SORT_DIR}/resend_utils.c \
 		${SORT_DIR}/sort_utils.c \

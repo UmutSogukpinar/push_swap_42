@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 10:59:48 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 21:08:10 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/06 18:09:48 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	resend_the_biggest(t_list **stack_a, t_list **stack_b)
 	rotate_a(stack_a);
 }
 
-void	resend_the_smallest(t_list **stack_a, t_list **stack_b)
+void	resend_smallest(t_list **stack_a, t_list **stack_b)
 {
 	push_a(stack_b, stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 21:23:56 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 02:07:00 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/06 20:10:40 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,31 @@ int	find_correct_index(int number, t_list *stack)
 	while (stack)
 	{
 		node_value = *(int *)stack->content;
-		if (number > node_value)
+		if (number >= node_value)
 			return (i);
 		i++;
 		stack = stack -> next;
 	}
 	return (i);
 }
+
+int	find_actual_index(int number, t_list *stack)
+{
+	int	i;
+	int	node_value;
+
+	i = 0;
+	while (stack)
+	{
+		node_value = *(int *)stack->content;
+		if (number == node_value)
+			return (i);
+		i++;
+		stack = stack -> next;
+	}
+	return (-1);
+}
+
 
 int	is_in_lower_part(int number, t_list *stack)
 {

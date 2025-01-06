@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 20:51:09 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 21:15:29 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/06 18:10:33 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 #include "utils.h"
 #include "ft_printf.h"
 
-void	resend_to_a(t_list **stack_a, t_list **stack_b)
+void	resend_to_a(t_sort *s_struct)
 {
 	int	b_value;
 
 	(void) b_value;
-	while ((*stack_b))
+	while (s_struct -> stack_b)
 	{
-		b_value = *((int *)(*stack_b)->content);
-		if (is_biggest(*stack_a, *stack_b))
-			resend_the_biggest(stack_a, stack_b);
-		else if (is_smallest(*stack_a, *stack_b))
-			resend_the_smallest(stack_a, stack_b);
+		b_value = *((int *)(s_struct -> stack_b)->content);
+		if (is_biggest(s_struct -> stack_a, s_struct -> stack_b))
+			resend_the_biggest(&(s_struct -> stack_a), &(s_struct -> stack_b));
+		else if (is_smallest(s_struct -> stack_a, s_struct -> stack_b))
+			resend_smallest(&(s_struct -> stack_a), &(s_struct -> stack_b));
 		else
-			resend_middles(stack_a, stack_b);
+			resend_middles(&(s_struct -> stack_a), &(s_struct -> stack_b));
 	}
 }
 

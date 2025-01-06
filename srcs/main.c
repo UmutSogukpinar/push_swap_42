@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 23:01:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 18:40:45 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/06 18:14:02 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,25 @@ int	main(int arg_number, char **args)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	t_sort	*sort_struct;
 
 	if (arg_number <= 1)
 		return (0);
 	stack_a = init_stack(args);
 	stack_b = NULL;
 	if (!stack_a)
-	{
-		ft_printf("Error\n");
-		return (1);
-	}
+		shut_program(&stack_a, &stack_b);
+	sort_struct = malloc(sizeof(t_sort));
+	if (!sort_struct)
+		shut_program(&stack_a, &stack_b);
+	sort_struct -> stack_a = stack_a;
+	sort_struct -> stack_b = stack_b;
 	ft_display_int_list(stack_a);
 	ft_printf("\n");
-	if (!is_sorted(stack_a))
-		sort(&stack_a, &stack_b);
-	ft_display_int_list(stack_a);
-	ft_lstclear(&stack_a, free);
+	if (!is_sorted(sort_struct -> stack_a))
+		sort(sort_struct);
+	ft_display_int_list(sort_struct -> stack_a);
+	ft_lstclear(&(sort_struct -> stack_a), free);
+	free(sort_struct);
 	return (0);
 }
