@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:44:24 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:28:00 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:17:44 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	display_int_stack(t_stack *stack)
 	while (stack != NULL)
 	{
 		if (stack->content)
-			ft_printf("Node %d: %d\n", i, *(int *)(stack->content));
+			ft_printf("Node %d: %d index: %d\n",
+				i, *(int *)(stack->content), stack->index);
 		else
 			ft_printf("Node %d: (null)\n", i);
 		stack = stack->next;

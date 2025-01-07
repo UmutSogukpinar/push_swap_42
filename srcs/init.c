@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:19:45 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 15:46:34 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 17:23:10 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ t_sort	*init_sort_struct(void)
 	return (main);
 }
 
-int	*create_int_ptr(char *str);
-
 void	utilized_main(t_sort *main, char **args, int arg_num)
 {
 	int		*value;
@@ -42,35 +40,28 @@ void	utilized_main(t_sort *main, char **args, int arg_num)
 	}
 }
 
-int	is_number(char *str)
+void	init_index_value(t_sort *main)
 {
-	int	i;
+	t_stack	*temp_one;
+	t_stack	*temp_two;
+	int		value_one;
+	int		value_two;
+	int		counter;
 
-	i = 0;
-	if (str[i] == '\0')
-		return (0);
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (str[i] == '\0')
-		return (0);
-	while (str[i] != '\0')
+	temp_one = main -> stack_a;
+	while (temp_one)
 	{
-		if (!ft_isdigit((int) str[i]))
-			return (0);
-		i++;
+		value_one = *(int *)(temp_one -> content);
+		temp_two = main -> stack_a;
+		counter = 0;
+		while (temp_two)
+		{
+			value_two = *(int *)(temp_two -> content);
+			if (value_one > value_two)
+				counter++;
+			temp_two = temp_two -> next;
+		}
+		temp_one -> index = counter;
+		temp_one = temp_one -> next;
 	}
-	return (1);
-}
-
-int	*create_int_ptr(char *str)
-{
-	int	*number;
-
-	if (!is_number(str))
-		return (NULL);
-	number = malloc(sizeof(int));
-	if (!number)
-		return (NULL);
-	*number = ft_atoi(str);
-	return (number);
 }

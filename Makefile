@@ -12,6 +12,7 @@ OBJ_DIR = ./objs
 SOURCES =	$(SRCS_DIR)/main.c \
 			$(SRCS_DIR)/shut.c \
 			$(SRCS_DIR)/init.c \
+			$(SRCS_DIR)/helpers.c \
 			$(ACT_DIR)/actions.c \
 			$(OPR_DIR)/push.c \
 			$(OPR_DIR)/swap.c \
@@ -42,7 +43,7 @@ clean:
 	${MAKE} -C ${LIB_DIR}/my_printf fclean
 	${MAKE} -C ${LIB_DIR}/my_libft fclean
 	${RM} ${OBJ_DIR}
-
+	
 fclean: clean
 	${RM} ${NAME}
 
