@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_mini.c                                        :+:      :+:    :+:   */
+/*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 13:52:16 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 15:52:50 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 15:29:40 by umut              #+#    #+#             */
+/*   Updated: 2025/01/07 15:48:14 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort.h"
-#include "operations.h"
+#ifndef OPERATIONS_H
+# define OPERATIONS_H
 
-void	sort_for_two(t_sort *main)
-{
-	t_stack	*head;
-	t_stack	*tail;
-	int		head_value;
-	int		tail_value;
+# include "sort.h"
 
-	head = (main -> stack_a);
-	tail = head -> next;
-	head_value = *(int *)head -> content;
-	tail_value = *(int *)tail -> content;
-	if (head_value <= tail_value)
-		return ;
-	swap_a(main);
-}
+void	push_a(t_sort *main);
+void	push_b(t_sort *main);
+
+void	swap_a(t_sort *main);
+void	swap_b(t_sort *main);
+
+void	rotate_a(t_sort *main);
+void	rotate_b(t_sort *main);
+void	rotate_both(t_sort *main);
+
+void	reverse_rotate_a(t_sort *main);
+void	reverse_rotate_b(t_sort *main);
+void	reverse_rotate_both(t_sort *main);
+
+#endif

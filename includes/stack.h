@@ -6,17 +6,18 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:46:22 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:37:04 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 15:48:08 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-#include "sort.h"
+# include "sort.h"
 
 t_stack	*create_node(void *content);
-void	stack_add(t_stack **stack, t_stack *new_stack);
+void	stack_add_back(t_stack **stack, t_stack *new_stack);
+void	stack_add_front(t_stack **stack, t_stack *new_stack);
 void	stack_update(t_sort *main, int *value);
 void	stack_clear(t_stack **stack, void (*del)(void *));
 t_stack	*stack_last(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:39:24 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 15:52:05 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,15 @@ typedef struct s_sort
 
 }	t_sort;
 
-
 void	shut_program_error(t_sort *main);
 void	shut_program_default(t_sort *main);
 
-t_sort	*init_sort_struct();
+t_sort	*init_sort_struct(void);
 void	utilized_main(t_sort *main, char **args, int arg_num);
 
 void	sort(t_sort *main);
 int		is_sorted(t_stack *stack);
+
+void	sort_for_two(t_sort *main);
 
 #endif

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_mini.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 13:52:16 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 15:52:50 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 15:30:05 by umut              #+#    #+#             */
+/*   Updated: 2025/01/07 15:33:16 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "sort.h"
-#include "operations.h"
+#include "actions.h"
 
-void	sort_for_two(t_sort *main)
+void	push_a(t_sort *main)
 {
-	t_stack	*head;
-	t_stack	*tail;
-	int		head_value;
-	int		tail_value;
+	push(&(main -> stack_b), &(main -> stack_a));
+	ft_printf("pa\n");
+}
 
-	head = (main -> stack_a);
-	tail = head -> next;
-	head_value = *(int *)head -> content;
-	tail_value = *(int *)tail -> content;
-	if (head_value <= tail_value)
-		return ;
-	swap_a(main);
+void	push_b(t_sort *main)
+{
+	push(&(main -> stack_a), &(main -> stack_b));
+	ft_printf("pb\n");
 }

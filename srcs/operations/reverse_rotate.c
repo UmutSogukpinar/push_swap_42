@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_mini.c                                        :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 13:52:16 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 15:52:50 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 15:39:04 by umut              #+#    #+#             */
+/*   Updated: 2025/01/07 15:40:23 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "sort.h"
-#include "operations.h"
+#include "actions.h"
 
-void	sort_for_two(t_sort *main)
+void	reverse_rotate_a(t_sort *main)
 {
-	t_stack	*head;
-	t_stack	*tail;
-	int		head_value;
-	int		tail_value;
+	reverse_rotate(&(main -> stack_a));
+	ft_printf("rra\n");
+}
 
-	head = (main -> stack_a);
-	tail = head -> next;
-	head_value = *(int *)head -> content;
-	tail_value = *(int *)tail -> content;
-	if (head_value <= tail_value)
-		return ;
-	swap_a(main);
+void	reverse_rotate_b(t_sort *main)
+{
+	reverse_rotate(&(main -> stack_b));
+	ft_printf("rrb\n");
+}
+
+void	reverse_rotate_both(t_sort *main)
+{
+	reverse_rotate(&(main -> stack_a));
+	reverse_rotate(&(main -> stack_b));
+	ft_printf("rrr\n");
 }

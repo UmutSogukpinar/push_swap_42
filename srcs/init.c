@@ -6,14 +6,14 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:19:45 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:25:43 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 15:46:34 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "stack.h"
 
-t_sort	*init_sort_struct()
+t_sort	*init_sort_struct(void)
 {
 	t_sort	*main;
 
