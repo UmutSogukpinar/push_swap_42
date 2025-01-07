@@ -6,11 +6,11 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:17:19 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 16:17:44 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 00:22:01 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "sort.h"
 
 int	is_number(char *str)
 {
@@ -30,6 +30,43 @@ int	is_number(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int	find_smallest_bigger_index(t_stack *stack, int index)
+{
+	int	temp_index;
+
+	temp_index = 2147483647;
+	if(!stack)
+		return (-1);
+	while (stack)
+	{
+		if ((stack -> index) > index)
+			if ((stack -> index) < temp_index)
+				temp_index = (stack -> index);
+		stack = stack -> next;
+	}
+	if (temp_index == 2147483647)
+		return (-1);
+	else
+		return (temp_index);
+}
+
+int	find_pos(t_stack *stack, int index)
+{
+	int	pos;
+
+	if(!stack)
+		return (-1);
+	pos = 0;
+	while (stack)
+	{
+		if (index == stack -> index)
+			return (pos);
+		pos++;
+		stack = stack -> next;
+	}
+	return (-1);
 }
 
 int	*create_int_ptr(char *str)

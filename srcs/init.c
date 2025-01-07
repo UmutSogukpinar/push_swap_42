@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:19:45 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 17:23:10 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 22:45:09 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ void	utilized_main(t_sort *main, char **args, int arg_num)
 		stack_update(main, value);
 		i++;
 	}
+}
+
+t_way	*init_way(void)
+{
+	t_way	*way;
+
+	way = malloc(sizeof(t_way));
+	if (!way)
+		return (NULL);
+	way -> amount = 0;
+	way -> list = NULL;
 }
 
 void	init_index_value(t_sort *main)

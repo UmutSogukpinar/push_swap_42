@@ -13,17 +13,22 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(SRCS_DIR)/shut.c \
 			$(SRCS_DIR)/init.c \
 			$(SRCS_DIR)/helpers.c \
+			$(SRCS_DIR)/helpers_two.c \
 			$(ACT_DIR)/actions.c \
 			$(OPR_DIR)/push.c \
 			$(OPR_DIR)/swap.c \
 			$(OPR_DIR)/rotate.c \
 			$(OPR_DIR)/reverse_rotate.c \
+			$(STACK_DIR)/list_utils.c \
 			$(STACK_DIR)/stack_utils.c \
 			$(STACK_DIR)/stack_utils_two.c \
 			$(STACK_DIR)/stack_display.c \
 			$(SORT_DIR)/sort.c \
 			$(SORT_DIR)/sort_mini.c \
 			$(SORT_DIR)/is_sorted.c \
+			$(SORT_DIR)/resend/optimum_resend.c \
+			$(SORT_DIR)/resend/resend.c \
+			$(SORT_DIR)/turk/sort_default.c \
 
 OBJS = $(SOURCES:%.c=$(OBJ_DIR)/%.o)
 

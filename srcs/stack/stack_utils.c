@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:33:05 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 15:47:09 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 23:28:14 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	stack_add_front(t_stack **stack, t_stack *new_stack)
 	*stack = new_stack;
 }
 
-void	stack_update(t_sort *main, int *value)
+void	stack_update(t_sort *main, void *value)
 {
 	t_stack	*new;
 
