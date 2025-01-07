@@ -1,6 +1,7 @@
 NAME = push_swap
 
 SRCS_DIR = ./srcs
+SORT_DIR = ./srcs/sort
 STACK_DIR = ./srcs/stack
 
 LIB_DIR = ./libs
@@ -9,7 +10,10 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(SRCS_DIR)/shut.c \
 			$(SRCS_DIR)/init.c \
 			$(STACK_DIR)/stack_utils.c \
+			$(STACK_DIR)/stack_utils_two.c \
 			$(STACK_DIR)/stack_display.c \
+			$(SORT_DIR)/sort.c \
+			$(SORT_DIR)/is_sorted.c \
 
 OBJS = ${SOURCES:.c=.o}
 

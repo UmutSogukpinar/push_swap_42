@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:44:24 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:15:27 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 13:28:00 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	display_int_stack(t_stack *stack)
 {
 	int	i;
 
+	if (!stack)
+	{
+		ft_printf("Stack is NULL\n");
+		return ;
+	}
 	i = 0;
 	while (stack != NULL)
 	{
@@ -33,6 +38,11 @@ void	ft_display_str_list(t_stack *stack)
 {
 	int	i;
 
+	if (!stack)
+	{
+		ft_printf("Stack is NULL\n");
+		return ;
+	}
 	i = 0;
 	while (stack != NULL)
 	{

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_utils_two.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:40:10 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 13:36:02 by umut              #+#    #+#             */
+/*   Updated: 2025/01/07 13:36:49 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
-#include "stack.h"
-#include "ft_printf.h"
 
-int	main(int arg_number, char **args)
+int	stack_size(t_stack *stack)
 {
-	t_sort	*main;
+	int	count;
 
-	main = init_sort_struct();
-	if (!main)
-		shut_program_error(main);
-	if (arg_number <= 1)
-		shut_program_error(main);
-	utilized_main(main, args, arg_number);
-	display_int_stack(main -> stack_a);
-	if (!is_sorted(main -> stack_a))
-		sort(main);
-	ft_printf("final:\n");
-	display_int_stack(main -> stack_a);
-	shut_program_default(main);
+	count = 0;
+	while (stack)
+	{
+		count++;
+		stack = stack -> next;
+	}
+	return (count);
 }

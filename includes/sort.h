@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:16:48 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/07 13:39:24 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,8 @@ void	shut_program_default(t_sort *main);
 
 t_sort	*init_sort_struct();
 void	utilized_main(t_sort *main, char **args, int arg_num);
+
+void	sort(t_sort *main);
+int		is_sorted(t_stack *stack);
 
 #endif
