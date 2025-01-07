@@ -47,7 +47,6 @@ BONUS = ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstclear.c \
 		ft_lstadd_back.c \
-		ft_lst_display.c \
 
 OBJECTS = $(FILES:.c=.o)
 BONUS_OBJ = $(BONUS:.c=.o)

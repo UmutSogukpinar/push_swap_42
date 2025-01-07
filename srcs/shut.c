@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   shut.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 23:38:48 by umut              #+#    #+#             */
-/*   Updated: 2025/01/05 18:41:11 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 12:09:20 by umut              #+#    #+#             */
+/*   Updated: 2025/01/07 13:12:25 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
-static void	free_all(t_list **stack_a, t_list **stack_b);
+#include "sort.h"
+#include "stack.h"
 
-void	shut_program(t_list **stack_a, t_list **stack_b)
+static void	free_all(t_sort *main);
+
+void	shut_program_error(t_sort *main)
 {
-	free_all(stack_a, stack_b);
+	free_all(main);
 	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }
 
-static void	free_all(t_list **stack_a, t_list **stack_b)
+void	shut_program_default(t_sort *main)
 {
-	ft_lstclear(stack_a, free);
-	ft_lstclear(stack_b, free);
+	free_all(main);
+	exit(EXIT_SUCCESS);
+}
+
+static void	free_all(t_sort *main)
+{
+	if (main)
+	{
+		stack_clear(&(main -> stack_a), free);
+		stack_clear(&(main -> stack_b), free);
+		if (main -> way)
+		{
+			ft_lstclear(&(main -> way -> list), free);
+			free(main -> way);
+		}
+
+		free(main);
+	}
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_tail.c                                         :+:      :+:    :+:   */
+/*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 20:27:07 by umut              #+#    #+#             */
-/*   Updated: 2025/01/04 20:29:13 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 12:46:22 by umut              #+#    #+#             */
+/*   Updated: 2025/01/07 13:09:52 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef STACK_H
+# define STACK_H
+
 #include "sort.h"
 
-t_list	*get_tail(t_list *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack -> next)
-		stack = stack -> next;
-	return (stack);
-}
+t_stack	*create_node(void *content);
+void	stack_add(t_stack **stack, t_stack *new_stack);
+void	stack_update(t_sort *main, int *value);
+void	stack_clear(t_stack **stack, void (*del)(void *));
+t_stack	*stack_last(t_stack *stack);
+
+void	ft_display_str_list(t_stack *stack);
+void	display_int_stack(t_stack *stack);
+
+#endif

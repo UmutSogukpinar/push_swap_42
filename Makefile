@@ -1,39 +1,17 @@
 NAME = push_swap
 
 SRCS_DIR = ./srcs
-ACT_DIR = srcs/actions
-UTIL_DIR = srcs/utils
-OPT_DIR = srcs/operations
-SORT_DIR = srcs/sorting
+STACK_DIR = ./srcs/stack
+
 LIB_DIR = ./libs
 
-SRCS = 	$(SRCS_DIR)/main.c \
-		$(SRCS_DIR)/exit.c \
-		${ACT_DIR}/actions.c \
-		${UTIL_DIR}/is_number.c \
-		${UTIL_DIR}/find_index.c \
-		${UTIL_DIR}/get_tail.c \
-		${UTIL_DIR}/init.c \
-		${UTIL_DIR}/display.c \
-		${OPT_DIR}/swap.c \
-		${OPT_DIR}/push.c \
-		${OPT_DIR}/rotate.c \
-		${OPT_DIR}/reverse_rotate.c \
-		${SORT_DIR}/sort.c \
-		${SORT_DIR}/sort_default.c \
-		${SORT_DIR}/find_way.c \
-		${SORT_DIR}/find_way_utils.c \
-		${SORT_DIR}/find_way_utils_two.c \
-		${SORT_DIR}/execute_way.c \
-		${SORT_DIR}/resend.c \
-		${SORT_DIR}/resend_utils.c \
-		${SORT_DIR}/sort_utils.c \
-		${SORT_DIR}/is_sorted.c \
-		${SORT_DIR}/sort_mini.c \
-		${SORT_DIR}/sort_three_helper.c \
-		${SORT_DIR}/sort_three_reverse_helper.c \
+SOURCES =	$(SRCS_DIR)/main.c \
+			$(SRCS_DIR)/shut.c \
+			$(SRCS_DIR)/init.c \
+			$(STACK_DIR)/stack_utils.c \
+			$(STACK_DIR)/stack_display.c \
 
-OBJS = ${SRCS:.c=.o}
+OBJS = ${SOURCES:.c=.o}
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes -Ilibs/my_libft -Ilibs/my_printf
@@ -57,7 +35,5 @@ fclean: clean
 
 re: fclean all
 
-run:
-	./${NAME} ${ARGS}
 
 .PHONY: all clean fclean re run
