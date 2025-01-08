@@ -29,8 +29,9 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(SORT_DIR)/resend/optimum_resend.c \
 			$(SORT_DIR)/resend/resend.c \
 			$(SORT_DIR)/turk/sort_default.c \
+			$(SORT_DIR)/execute/execute.c
 
-OBJS = $(SOURCES:%.c=$(OBJ_DIR)/%.o)
+OBJS = $(SOURCES:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes -Ilibs/my_libft -Ilibs/my_printf
@@ -47,17 +48,11 @@ ${NAME}: ${OBJS}
 clean: 
 	${MAKE} -C ${LIB_DIR}/my_printf fclean
 	${MAKE} -C ${LIB_DIR}/my_libft fclean
-	${RM} ${OBJ_DIR}
-	
+	${RM} ${OBJS}
+
 fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
 
-${OBJ_DIR}:
-	mkdir -p $(OBJ_DIR) $(OBJ_DIR)/srcs $(OBJ_DIR)/srcs/sort $(OBJ_DIR)/srcs/stack $(OBJ_DIR)/srcs/actions $(OBJ_DIR)/srcs/operations
-
-${OBJS}: ${OBJ_DIR}/%.o : %.c | ${OBJ_DIR}
-	${CC} ${CFLAGS} -c $< -o $@
-
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re

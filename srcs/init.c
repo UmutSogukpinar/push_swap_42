@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:19:45 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 22:45:09 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 15:34:25 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_way	*init_way(void)
 		return (NULL);
 	way -> amount = 0;
 	way -> list = NULL;
+	return (way);
 }
 
 void	init_index_value(t_sort *main)

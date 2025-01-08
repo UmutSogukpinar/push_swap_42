@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 00:22:15 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 16:04:40 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_sort
 
 void	shut_program_error(t_sort *main);
 void	shut_program_default(t_sort *main);
+void	free_way(t_way *way);
 
 t_sort	*init_sort_struct(void);
 void	init_index_value(t_sort *main);
@@ -54,12 +55,17 @@ void	sort_three_asc(t_sort *main);
 void	sort_default(t_sort *main);
 void	setup_b(t_sort *main);
 
+void	execute(t_sort *main);
+void	execute_commands(t_sort *main, char *command);
+
 void	resend(t_sort *main);
 void	create_resend_way(t_sort *main);
 t_way	*create_alternate_resend_way(t_sort *main, int index);
 void	update_resend_way(t_sort *main, t_way *temp);
-void	optimum_resend(t_sort *main, t_way *alternate, int index);
+void	alternate_resend(t_sort *main, t_way *alternate, int index);
 void	opt_rsnd_utis_one(t_sort *main, t_way *alternate, int index);
+void	opt_rsnd_utis_two(t_sort *main, t_way *alternate, int index);
+void	final_touch_resend(t_sort *main);
 
 int		is_sorted(t_stack *stack);
 int		is_number(char *str);

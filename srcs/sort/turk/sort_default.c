@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:16:20 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 17:02:46 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 15:33:14 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sort_default(t_sort *main)
 		
 	//}
 	sort(main);
-	
+	resend(main);
 }
 
 void	setup_b(t_sort *main)
