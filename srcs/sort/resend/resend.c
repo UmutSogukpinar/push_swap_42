@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 22:30:13 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 18:24:50 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 21:33:48 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_way	*create_alternate_resend_way(t_sort *main, int index)
 	temp_way = init_way();
 	if (!temp_way)
 		shut_program_error(main);
-	alternate_resend(main , temp_way, index);
+	alternate_resend(main, temp_way, index);
 	return (temp_way);
 }
 
@@ -70,4 +70,13 @@ void	final_touch_resend(t_sort *main)
 		free_way(main -> way);
 		main -> way = NULL;
 	}
+}
+
+void	alternate_resend(t_sort *main, t_way *alternate, int index)
+{
+	opt_rsnd_utils_zero(main, alternate, index);
+	opt_rsnd_utils_one(main, alternate, index);
+	opt_rsnd_utils_two(main, alternate, index);
+	minimize_list(&(alternate -> list));
+	alternate -> amount = ft_lstsize(alternate -> list);
 }

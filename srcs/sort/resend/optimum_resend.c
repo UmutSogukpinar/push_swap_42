@@ -13,14 +13,6 @@
 #include "sort.h"
 #include "stack.h"
 
-void	alternate_resend(t_sort *main, t_way *alternate, int index)
-{
-	opt_rsnd_utils_zero(main, alternate, index);
-	opt_rsnd_utils_one(main, alternate, index);
-	opt_rsnd_utils_two(main, alternate, index);
-	alternate -> amount = ft_lstsize(alternate -> list);
-}
-
 void	opt_rsnd_utils_one(t_sort *main, t_way *alternate, int index)
 {
 	int	pos;

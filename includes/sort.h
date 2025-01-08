@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 18:24:12 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 20:07:42 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ void	final_touch(t_sort *main);
 
 void	execute(t_sort *main);
 void	execute_commands(t_sort *main, char *command);
+void	remove_command(t_list **list, char *content);
+void	minimize_list(t_list **list);
+void	minimize_rotate(t_list **list);
+void	minimize_reverese_rotate(t_list	**list);
+void	minimize_swap(t_list **list);
 
 void	resend(t_sort *main);
 void	create_resend_way(t_sort *main);

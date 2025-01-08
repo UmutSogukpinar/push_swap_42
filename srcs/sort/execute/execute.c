@@ -6,12 +6,13 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 15:16:44 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 16:10:39 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 21:37:11 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "operations.h"
+#include "ft_printf.h"
 
 void	execute(t_sort *main)
 {
@@ -25,6 +26,7 @@ void	execute(t_sort *main)
 		execute_commands(main, command);
 		cmd_list = cmd_list -> next;
 	}
+	ft_printf("Execution completed\n");
 }
 
 void	execute_commands(t_sort *main, char *command)
@@ -37,6 +39,8 @@ void	execute_commands(t_sort *main, char *command)
 		swap_a(main);
 	else if (ft_strncmp(command, "sb", 2) == 0)
 		swap_b(main);
+	else if (ft_strncmp(command, "ss", 2) == 0)
+		swap_both(main);
 	else if (ft_strncmp(command, "ra", 2) == 0)
 		rotate_a(main);
 	else if (ft_strncmp(command, "rb", 2) == 0)
