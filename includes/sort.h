@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 16:04:40 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 18:24:12 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_sort
 void	shut_program_error(t_sort *main);
 void	shut_program_default(t_sort *main);
 void	free_way(t_way *way);
+void	update_way(t_sort *main, t_way *temp);
 
 t_sort	*init_sort_struct(void);
 void	init_index_value(t_sort *main);
@@ -54,6 +55,13 @@ void	sort_three_asc(t_sort *main);
 
 void	sort_default(t_sort *main);
 void	setup_b(t_sort *main);
+void	create_way(t_sort *main);
+t_way	*create_alternate_way(t_sort *main, int index);
+void	alternate_way(t_sort *main, t_way *temp_way, int index);
+void	optimum_way_utils_one(t_sort *main, t_way *alternate, int index);
+void	optimum_way_utils_two(t_sort *main, t_way *alternate, int index);
+void	optimum_way_utils_zero(t_sort *main, t_way *alternate, int index);
+void	final_touch(t_sort *main);
 
 void	execute(t_sort *main);
 void	execute_commands(t_sort *main, char *command);
@@ -61,10 +69,10 @@ void	execute_commands(t_sort *main, char *command);
 void	resend(t_sort *main);
 void	create_resend_way(t_sort *main);
 t_way	*create_alternate_resend_way(t_sort *main, int index);
-void	update_resend_way(t_sort *main, t_way *temp);
 void	alternate_resend(t_sort *main, t_way *alternate, int index);
-void	opt_rsnd_utis_one(t_sort *main, t_way *alternate, int index);
-void	opt_rsnd_utis_two(t_sort *main, t_way *alternate, int index);
+void	opt_rsnd_utils_one(t_sort *main, t_way *alternate, int index);
+void	opt_rsnd_utils_two(t_sort *main, t_way *alternate, int index);
+void	opt_rsnd_utils_zero(t_sort *main, t_way *alternate, int index);
 void	final_touch_resend(t_sort *main);
 
 int		is_sorted(t_stack *stack);
@@ -74,6 +82,7 @@ int		is_smallest(t_stack *stack, int index);
 int		is_in_upper_part(t_stack *stack, int pos);
 int		find_pos(t_stack *stack, int index);
 int		find_smallest_bigger_index(t_stack *stack, int index);
+int		find_biggest_smaller_index(t_stack *stack, int index);
 int		*create_int_ptr(char *str);
 int		find_biggest_pos(t_stack *stack);
 int		find_smallest_pos(t_stack *stack);

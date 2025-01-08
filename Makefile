@@ -26,9 +26,12 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(SORT_DIR)/sort.c \
 			$(SORT_DIR)/sort_mini.c \
 			$(SORT_DIR)/is_sorted.c \
+			$(SORT_DIR)/update_way.c \
 			$(SORT_DIR)/resend/optimum_resend.c \
 			$(SORT_DIR)/resend/resend.c \
 			$(SORT_DIR)/turk/sort_default.c \
+			$(SORT_DIR)/turk/optimum.c \
+			$(SORT_DIR)/turk/create_way.c \
 			$(SORT_DIR)/execute/execute.c
 
 OBJS = $(SOURCES:.c=.o)
@@ -37,6 +40,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes -Ilibs/my_libft -Ilibs/my_printf
 
 RM = rm -rf
+
+ARGS = 45 12 76 98 23 67 89 10 34 56 78 3 21 90 54 87 32 65 43 11 22 33 44 55 66 77 88 99 1 2 4 5 6 7 8 9 13 14 15 16 17 18 19 20 24 25 26 27 28 29 30 31 35 36 37 38 39 40 41 42 46 47 48 49 50 51 52 53 57 58 59 60 61 62 63 64 68 69 70 71 72 73 74 75 79 80 81 82 83 84 85 86 91 92 93 94 95 96 97 100
 
 all: ${NAME}
 
@@ -55,4 +60,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+run: ${NAME}
+	./${NAME} $(ARGS)
+
+.PHONY: all clean fclean re run
