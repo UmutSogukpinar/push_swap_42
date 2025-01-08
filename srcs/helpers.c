@@ -1,0 +1,83 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helpers.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/07 16:17:19 by umut              #+#    #+#             */
+/*   Updated: 2025/01/08 00:22:01 by umut             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "sort.h"
+
+int	is_number(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '\0')
+		return (0);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (!ft_isdigit((int) str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	find_smallest_bigger_index(t_stack *stack, int index)
+{
+	int	temp_index;
+
+	temp_index = 2147483647;
+	if(!stack)
+		return (-1);
+	while (stack)
+	{
+		if ((stack -> index) > index)
+			if ((stack -> index) < temp_index)
+				temp_index = (stack -> index);
+		stack = stack -> next;
+	}
+	if (temp_index == 2147483647)
+		return (-1);
+	else
+		return (temp_index);
+}
+
+int	find_pos(t_stack *stack, int index)
+{
+	int	pos;
+
+	if(!stack)
+		return (-1);
+	pos = 0;
+	while (stack)
+	{
+		if (index == stack -> index)
+			return (pos);
+		pos++;
+		stack = stack -> next;
+	}
+	return (-1);
+}
+
+int	*create_int_ptr(char *str)
+{
+	int	*number;
+
+	if (!is_number(str))
+		return (NULL);
+	number = malloc(sizeof(int));
+	if (!number)
+		return (NULL);
+	*number = ft_atoi(str);
+	return (number);
+}

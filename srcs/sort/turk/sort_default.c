@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_default.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 17:21:07 by umut             ###   ########.fr       */
+/*   Created: 2025/01/07 16:16:20 by umut              #+#    #+#             */
+/*   Updated: 2025/01/08 15:33:14 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "stack.h"
-#include "ft_printf.h"
+#include "operations.h"
 
-int	main(int arg_number, char **args)
+void	sort_default(t_sort *main)
 {
-	t_sort	*main;
+	setup_b(main);
+	//while (stack_size(main -> stack_a) > 3)
+	//{
+		
+	//}
+	sort(main);
+	resend(main);
+}
 
-	main = init_sort_struct();
-	if (!main)
-		shut_program_error(main);
-	if (arg_number <= 1)
-		shut_program_error(main);
-	utilized_main(main, args, arg_number);
-	init_index_value(main);
-	display_int_stack(main -> stack_a);
-	if (!is_sorted(main -> stack_a))
-		sort(main);
-	ft_printf("final:\n");
-	display_int_stack(main -> stack_a);
-	shut_program_default(main);
+void	setup_b(t_sort *main)
+{
+	push_b(main);
+	push_b(main);
+	sort_two_asc(main, "b");
 }

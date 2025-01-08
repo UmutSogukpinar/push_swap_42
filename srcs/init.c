@@ -6,14 +6,14 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:19:45 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 13:25:43 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 15:34:25 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "stack.h"
 
-t_sort	*init_sort_struct()
+t_sort	*init_sort_struct(void)
 {
 	t_sort	*main;
 
@@ -25,8 +25,6 @@ t_sort	*init_sort_struct()
 	main -> way = NULL;
 	return (main);
 }
-
-int	*create_int_ptr(char *str);
 
 void	utilized_main(t_sort *main, char **args, int arg_num)
 {
@@ -42,35 +40,40 @@ void	utilized_main(t_sort *main, char **args, int arg_num)
 	}
 }
 
-int	is_number(char *str)
+t_way	*init_way(void)
 {
-	int	i;
+	t_way	*way;
 
-	i = 0;
-	if (str[i] == '\0')
-		return (0);
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (str[i] == '\0')
-		return (0);
-	while (str[i] != '\0')
-	{
-		if (!ft_isdigit((int) str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+	way = malloc(sizeof(t_way));
+	if (!way)
+		return (NULL);
+	way -> amount = 0;
+	way -> list = NULL;
+	return (way);
 }
 
-int	*create_int_ptr(char *str)
+void	init_index_value(t_sort *main)
 {
-	int	*number;
+	t_stack	*temp_one;
+	t_stack	*temp_two;
+	int		value_one;
+	int		value_two;
+	int		counter;
 
-	if (!is_number(str))
-		return (NULL);
-	number = malloc(sizeof(int));
-	if (!number)
-		return (NULL);
-	*number = ft_atoi(str);
-	return (number);
+	temp_one = main -> stack_a;
+	while (temp_one)
+	{
+		value_one = *(int *)(temp_one -> content);
+		temp_two = main -> stack_a;
+		counter = 0;
+		while (temp_two)
+		{
+			value_two = *(int *)(temp_two -> content);
+			if (value_one > value_two)
+				counter++;
+			temp_two = temp_two -> next;
+		}
+		temp_one -> index = counter;
+		temp_one = temp_one -> next;
+	}
 }
