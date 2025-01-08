@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 20:07:42 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 22:43:24 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int		find_biggest_smaller_index(t_stack *stack, int index);
 int		*create_int_ptr(char *str);
 int		find_biggest_pos(t_stack *stack);
 int		find_smallest_pos(t_stack *stack);
+int		count_dd_array_elements(char **array);
 
 #endif

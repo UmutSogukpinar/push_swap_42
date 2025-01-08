@@ -14,6 +14,7 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(SRCS_DIR)/init.c \
 			$(SRCS_DIR)/helpers.c \
 			$(SRCS_DIR)/helpers_two.c \
+			$(SRCS_DIR)/helpers_three.c \
 			$(ACT_DIR)/actions.c \
 			$(OPR_DIR)/push.c \
 			$(OPR_DIR)/swap.c \
@@ -68,5 +69,35 @@ run: ${NAME}
 
 valgrind: ${NAME}
 	valgrind ./${NAME} $(ARGS)
+
+test2:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-100 -n 2))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
+test3:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-100 -n 3))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
+test5:				$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-5000 -n 5))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
+test100:			$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
+
+test500:			$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-5000 -n 500))
+					./push_swap $(ARG) | ./checker_linux $(ARG)
+					@echo -n "Instructions: "
+					@./push_swap $(ARG) | wc -l
 
 .PHONY: all clean fclean re run valgrind
