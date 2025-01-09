@@ -72,9 +72,14 @@ void	opt_rsnd_utils_zero(t_sort *main, t_way *alternate, int index)
 
 	pos = find_pos(main -> stack_b, index);
 	i = -1;
-	if (is_in_upper_part(main -> stack_b, pos))
-		while (++i < pos)
+	if (pos == 0)
+		return ;
+	else if (is_in_upper_part(main -> stack_b, pos))
+	{
+		while (++i < pos - 1)
 			list_update(main, &(alternate -> list), ft_strdup("rb"));
+		list_update(main, &(alternate -> list), ft_strdup("rb"));		
+	}
 	else
 		while (++i < stack_size(main -> stack_b) - pos)
 			list_update(main, &(alternate -> list), ft_strdup("rrb"));

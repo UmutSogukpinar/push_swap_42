@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:03:05 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 20:52:18 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 10:54:15 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	minimize_list(t_list **list)
 {
 	minimize_rotate(list);
 	minimize_reverese_rotate(list);
-	minimize_swap(list);
+	//minimize_swap(list);
 }
 
 static void	remove_command_helper(t_list **list, char *content);

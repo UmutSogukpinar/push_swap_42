@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 21:37:14 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 11:04:13 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	main(int arg_number, char **args)
 	if (!main)
 		shut_program_error(main);
 	if (arg_number <= 1)
-		shut_program_error(main);
+	{
+		ft_printf("%s\n", args[0]);
+		shut_program_default(main);		
+	}
 	utilized_main(main, args, arg_number);
 	init_index_value(main);
 	//display_int_stack(main -> stack_a);

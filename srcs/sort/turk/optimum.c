@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 16:57:55 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 22:32:17 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 10:58:59 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,14 @@ void	optimum_way_utils_zero(t_sort *main, t_way *alternate, int index)
 
 	pos = find_pos(main -> stack_a, index);
 	i = -1;
-	if (is_in_upper_part(main -> stack_a, pos))
-		while (++i < pos)
-			list_update(main, &(alternate -> list), ft_strdup("ra"));
+	if (pos == 0)
+		return ;
+	else if (is_in_upper_part(main -> stack_a, pos))
+	{
+		while (++i < pos - 1)
+			list_update(main, &(alternate -> list), ft_strdup("ra"));	
+		list_update(main, &(alternate -> list), ft_strdup("sa"));	
+	}
 	else
 		while (++i < stack_size(main -> stack_a) - pos)
 			list_update(main, &(alternate -> list), ft_strdup("rra"));

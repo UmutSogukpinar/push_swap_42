@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 15:16:44 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 21:37:11 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 10:52:10 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	execute(t_sort *main)
 		execute_commands(main, command);
 		cmd_list = cmd_list -> next;
 	}
-	ft_printf("Execution completed\n");
+	//ft_printf("Execution completed\n");
 }
 
 void	execute_commands(t_sort *main, char *command)
