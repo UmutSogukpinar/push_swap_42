@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:03:05 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 10:54:15 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 15:55:01 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	remove_command(t_list **list, char *content)
 	{
 		temp = *list;
 		*list = (*list) -> next;
+		free(temp -> content);
 		free(temp);
 		return ;
 	}
@@ -55,6 +56,7 @@ static void	remove_command_helper(t_list **list, char *command)
 		{
 			temp = current -> next;
 			current -> next = current -> next -> next;
+			free(temp -> content);
 			free(temp);
 			return ;	
 		}

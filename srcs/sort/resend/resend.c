@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 22:30:13 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 12:09:50 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 15:54:47 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ void	alternate_resend(t_sort *main, t_way *alternate, int index)
 	opt_rsnd_utils_zero(main, alternate, index);
 	opt_rsnd_utils_one(main, alternate, index);
 	opt_rsnd_utils_two(main, alternate, index);
-	//minimize_list(&(alternate -> list));
+	minimize_list(&(alternate -> list));
 	alternate -> amount = ft_lstsize(alternate -> list);
 }
