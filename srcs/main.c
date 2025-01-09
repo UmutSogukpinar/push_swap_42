@@ -6,13 +6,14 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 16:27:24 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 16:43:39 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "stack.h"
 #include "ft_printf.h"
+#include "stdio.h"
 
 int	main(int arg_number, char **args)
 {

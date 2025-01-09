@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 16:25:09 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 18:07:40 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ int		find_smallest_pos(t_stack *stack);
 int		count_dd_array_elements(char **array);
 int		is_str_same(char *s1, char *s2);
 void	check_duplicate(t_sort *main);
+long	atoi_long(char	*str);
+int		is_in_bound(long number);
 
 #endif

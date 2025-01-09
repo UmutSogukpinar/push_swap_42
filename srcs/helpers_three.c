@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:41:37 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 16:24:19 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 18:05:36 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,40 @@ void	check_duplicate(t_sort *main)
 		}
 		temp_one = temp_one -> next;
 	}
+}
+
+long	atoi_long(char	*str)
+{
+	long	num;
+	int		sign;
+	int		i;
+
+	num = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	if (str[i] != '\0')
+		return 0;
+	return (num * sign);
+}
+
+int	is_in_bound(long number)
+{
+	if (number > 2147483647 || number < -2147483648)
+		return (0);
+	else
+		return (1);
 }

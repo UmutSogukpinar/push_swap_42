@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:17:19 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 16:48:52 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 18:07:58 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,11 @@ int	find_pos(t_stack *stack, int index)
 
 int	*create_int_ptr(char *str)
 {
-	int	*number;
+	int		*number;
 
 	if (!is_number(str))
+		return (NULL);
+	if (!is_in_bound(atoi_long(str)))
 		return (NULL);
 	number = malloc(sizeof(int));
 	if (!number)
