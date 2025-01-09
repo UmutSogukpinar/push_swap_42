@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 11:04:13 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 16:18:44 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int arg_number, char **args)
 		shut_program_default(main);		
 	}
 	utilized_main(main, args, arg_number);
+	
 	init_index_value(main);
 	//display_int_stack(main -> stack_a);
 	if (!is_sorted(main -> stack_a))
@@ -34,4 +35,5 @@ int	main(int arg_number, char **args)
 	ft_printf("final:\n");
 	display_int_stack(main -> stack_a);
 	shut_program_default(main);
+	return (0);
 }

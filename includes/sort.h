@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:57:21 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 22:43:24 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 16:12:28 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	final_touch(t_sort *main);
 
 void	execute(t_sort *main);
 void	execute_commands(t_sort *main, char *command);
-void	remove_command(t_list **list, char *content);
+void	remove_command(t_list **list, char *command);
 void	minimize_list(t_list **list);
 void	minimize_rotate(t_list **list);
 void	minimize_reverese_rotate(t_list	**list);
@@ -92,5 +92,6 @@ int		*create_int_ptr(char *str);
 int		find_biggest_pos(t_stack *stack);
 int		find_smallest_pos(t_stack *stack);
 int		count_dd_array_elements(char **array);
+int		is_str_same(char *s1, char *s2);
 
 #endif
