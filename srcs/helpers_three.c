@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 22:41:37 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 16:16:29 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 16:24:19 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,23 @@ int	count_dd_array_elements(char **array)
 	while (array[counter] != NULL)
 		counter++;
 	return (counter);
+}
+
+void	check_duplicate(t_sort *main)
+{
+	t_stack	*temp_one;
+	t_stack	*temp_two;
+
+	temp_one = main -> stack_a;
+	while (temp_one -> next)
+	{
+		temp_two = temp_one -> next;
+		while (temp_two)
+		{
+			if (is_str_same(temp_one -> content, temp_two -> content))
+				shut_program_error(main);
+			temp_two = temp_two -> next;
+		}
+		temp_one = temp_one -> next;
+	}
 }
