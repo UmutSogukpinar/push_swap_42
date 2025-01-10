@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:17:19 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 00:22:01 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/09 18:07:58 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,26 @@ int	find_smallest_bigger_index(t_stack *stack, int index)
 		return (temp_index);
 }
 
+int	find_biggest_smaller_index(t_stack *stack, int index)
+{
+	int	temp_index;
+
+	temp_index = -2147483648;
+	if(!stack)
+		return (-1);
+	while (stack)
+	{
+		if ((stack -> index) < index)
+			if ((stack -> index) > temp_index)
+				temp_index = (stack -> index);
+		stack = stack -> next;
+	}
+	if (temp_index == -2147483648)
+		return (-1);
+	else
+		return (temp_index);
+}
+
 int	find_pos(t_stack *stack, int index)
 {
 	int	pos;
@@ -71,9 +91,11 @@ int	find_pos(t_stack *stack, int index)
 
 int	*create_int_ptr(char *str)
 {
-	int	*number;
+	int		*number;
 
 	if (!is_number(str))
+		return (NULL);
+	if (!is_in_bound(atoi_long(str)))
 		return (NULL);
 	number = malloc(sizeof(int));
 	if (!number)

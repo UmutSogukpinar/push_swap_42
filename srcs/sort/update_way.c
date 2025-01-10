@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   update_way.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 15:33:28 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 19:59:30 by umut             ###   ########.fr       */
+/*   Created: 2025/01/08 16:29:13 by umut              #+#    #+#             */
+/*   Updated: 2025/01/08 16:50:01 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "sort.h"
-#include "actions.h"
 
-void	swap_a(t_sort *main)
+void	update_way(t_sort *main, t_way *temp)
 {
-	swap(&(main -> stack_a));
-	ft_printf("sa\n");
-}
-
-void	swap_b(t_sort *main)
-{
-	swap(&(main -> stack_b));
-	ft_printf("sb\n");
-}
-
-void	swap_both(t_sort *main)
-{
-	swap(&(main -> stack_a));
-	swap(&(main -> stack_b));
-	ft_printf("ss\n");
+	if (main -> way == NULL)
+		main -> way = temp;
+	else
+	{
+		if ((main -> way -> amount) <= (temp -> amount))
+			free_way(temp);
+		else
+		{
+			free_way(main -> way);
+			main -> way = temp;
+		}
+	}
 }

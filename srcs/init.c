@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 12:19:45 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 15:34:25 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/08 22:45:08 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,26 @@ void	utilized_main(t_sort *main, char **args, int arg_num)
 {
 	int		*value;
 	int		i;
+	char	**my_args;
 
-	i = 1;
-	while (i < arg_num)
+	i = -1;
+	if (arg_num == 2)
+	{
+		my_args = ft_split(args[1], ' ');
+		while (++i < count_dd_array_elements(my_args))
+		{
+			value = create_int_ptr(my_args[i]);
+			stack_update(main, value);
+			free(my_args[i]);
+		}
+		free(my_args);
+		return ;
+	}
+	i = 0;
+	while (++i < arg_num)
 	{
 		value = create_int_ptr(args[i]);
 		stack_update(main, value);
-		i++;
 	}
 }
 

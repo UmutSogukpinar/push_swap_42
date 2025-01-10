@@ -6,13 +6,14 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 17:21:07 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/10 16:27:21 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "stack.h"
 #include "ft_printf.h"
+#include "stdio.h"
 
 int	main(int arg_number, char **args)
 {
@@ -22,13 +23,20 @@ int	main(int arg_number, char **args)
 	if (!main)
 		shut_program_error(main);
 	if (arg_number <= 1)
-		shut_program_error(main);
+	{
+		ft_printf("%s\n", args[0]);
+		shut_program_default(main);		
+	}
 	utilized_main(main, args, arg_number);
+	check_duplicate(main);
 	init_index_value(main);
-	display_int_stack(main -> stack_a);
+	//display_int_stack(main -> stack_a);
 	if (!is_sorted(main -> stack_a))
 		sort(main);
-	ft_printf("final:\n");
-	display_int_stack(main -> stack_a);
+	//ft_printf("stack_a:\n");
+	//display_int_stack(main -> stack_a);
+	//ft_printf("stack_b:\n");
+	//display_int_stack(main -> stack_b);
 	shut_program_default(main);
+	return (0);
 }
