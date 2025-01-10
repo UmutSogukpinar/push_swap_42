@@ -6,7 +6,7 @@
 /*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 16:23:05 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 16:01:41 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/10 15:21:20 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ t_way	*create_alternate_way(t_sort *main, int index)
 
 void	alternate_way(t_sort *main, t_way *temp_way, int index)
 {
-	optimum_way_utils_zero(main, temp_way, index);	 
 	optimum_way_utils_one(main, temp_way, index);
 	optimum_way_utils_two(main, temp_way, index);
+	optimum_way_utils_zero(main, temp_way, index);	 
 	minimize_list(&(temp_way -> list));
 	temp_way -> amount = ft_lstsize(temp_way -> list);
 }
