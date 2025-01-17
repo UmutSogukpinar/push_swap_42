@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 15:16:44 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 16:14:29 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 16:51:10 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 16:53:12 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
 #include "operations.h"
-#include "ft_printf.h"
 
 void	execute(t_sort *main)
 {
@@ -26,7 +25,6 @@ void	execute(t_sort *main)
 		execute_commands(main, command);
 		cmd_list = cmd_list -> next;
 	}
-	//ft_printf("Execution completed\n");
 }
 
 void	execute_commands(t_sort *main, char *command)

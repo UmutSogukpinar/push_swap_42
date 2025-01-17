@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_way.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 16:23:05 by umut              #+#    #+#             */
-/*   Updated: 2025/01/10 15:21:20 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 17:17:18 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 17:18:30 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	create_way(t_sort *main)
 		update_way(main, temp_way);
 		temp_a = temp_a -> next;
 	}
-	
 }
 
 t_way	*create_alternate_way(t_sort *main, int index)
@@ -43,8 +42,8 @@ void	alternate_way(t_sort *main, t_way *temp_way, int index)
 {
 	optimum_way_utils_one(main, temp_way, index);
 	optimum_way_utils_two(main, temp_way, index);
-	optimum_way_utils_zero(main, temp_way, index);	 
-	minimize_list(&(temp_way -> list));
+	optimum_way_utils_zero(main, temp_way, index);
+	minimize_list(&(temp_way->list));
 	temp_way -> amount = ft_lstsize(temp_way -> list);
 }
 

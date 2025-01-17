@@ -3,7 +3,6 @@ NAME = push_swap
 SRCS_DIR = ./srcs
 SORT_DIR = ./srcs/sort
 STACK_DIR = ./srcs/stack
-ACT_DIR = ./srcs/actions
 OPR_DIR = ./srcs/operations
 
 LIB_DIR = ./libs
@@ -15,7 +14,7 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(SRCS_DIR)/helpers.c \
 			$(SRCS_DIR)/helpers_two.c \
 			$(SRCS_DIR)/helpers_three.c \
-			$(ACT_DIR)/actions.c \
+			$(OPR_DIR)/actions.c \
 			$(OPR_DIR)/push.c \
 			$(OPR_DIR)/swap.c \
 			$(OPR_DIR)/rotate.c \
@@ -23,7 +22,6 @@ SOURCES =	$(SRCS_DIR)/main.c \
 			$(STACK_DIR)/list_utils.c \
 			$(STACK_DIR)/stack_utils.c \
 			$(STACK_DIR)/stack_utils_two.c \
-			$(STACK_DIR)/stack_display.c \
 			$(SORT_DIR)/sort.c \
 			$(SORT_DIR)/sort_mini.c \
 			$(SORT_DIR)/is_sorted.c \
@@ -40,7 +38,7 @@ SOURCES =	$(SRCS_DIR)/main.c \
 OBJS = $(SOURCES:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iincludes -Ilibs/my_libft -Ilibs/my_printf -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -Iincludes -Ilibs/libft -Ilibs/printf -g -fsanitize=address
 
 RM = rm -rf
 
@@ -50,13 +48,13 @@ ARGS2 = 3 4 1 51 213 525 52 4027 5271 4762 6610 9790 5951 8245 5013 6273
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${MAKE} -C ./libs/my_printf
-	${MAKE} -C ./libs/my_libft
-	${CC} ${CFLAGS} ${OBJS} ${LIB_DIR}/my_printf/libftprintf.a ${LIB_DIR}/my_libft/libft.a  -o ${NAME}
+	${MAKE} -C ./libs/printf
+	${MAKE} -C ./libs/libft
+	${CC} ${CFLAGS} ${OBJS} ${LIB_DIR}/printf/libftprintf.a ${LIB_DIR}/libft/libft.a  -o ${NAME}
 
 clean: 
-	${MAKE} -C ${LIB_DIR}/my_printf fclean
-	${MAKE} -C ${LIB_DIR}/my_libft fclean
+	${MAKE} -C ${LIB_DIR}/printf fclean
+	${MAKE} -C ${LIB_DIR}/libft fclean
 	${RM} ${OBJS}
 
 fclean: clean
@@ -97,4 +95,9 @@ test500:			$(NAME)
 					@echo -n "Instructions: "
 					@./push_swap $(ARG) | wc -l
 
-.PHONY: all clean fclean re run valgrind
+valgrind:			$(NAME)	
+					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
+					valgrind ./push_swap $(ARG)
+	
+
+.PHONY: all clean fclean re run valgrind test2 test3 test5 test100 test5
