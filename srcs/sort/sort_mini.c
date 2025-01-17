@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_mini.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 13:52:16 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 16:56:21 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 16:44:40 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 16:44:41 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	sort_two_asc(t_sort *main, char *type)
 	int		head_value;
 	int		tail_value;
 
+	head = NULL;
 	if (ft_strncmp(type, "a", 1) == 0)
 		head = (main -> stack_a);
 	else if (ft_strncmp(type, "b", 1) == 0)

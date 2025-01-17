@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 22:41:37 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 18:05:36 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 17:53:04 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 17:53:05 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ long	atoi_long(char	*str)
 		i++;
 	}
 	if (str[i] != '\0')
-		return 0;
+		return (0);
 	return (num * sign);
 }
 

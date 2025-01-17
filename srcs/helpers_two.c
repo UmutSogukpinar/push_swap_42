@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers_two.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 22:53:03 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 00:30:04 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 17:53:11 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 17:53:12 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	is_in_upper_part(t_stack *stack, int pos)
 {
-	int stack_len;
+	int	stack_len;
 
 	stack_len = stack_size(stack);
 	if (pos <= (stack_len / 2) && stack_len % 2 == 1)

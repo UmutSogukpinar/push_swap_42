@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:55:18 by umut              #+#    #+#             */
-/*   Updated: 2025/01/10 16:27:21 by umut             ###   ########.fr       */
+/*   Updated: 2025/01/17 17:56:55 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
-#include "stack.h"
 #include "ft_printf.h"
-#include "stdio.h"
 
 int	main(int arg_number, char **args)
 {
@@ -25,18 +23,13 @@ int	main(int arg_number, char **args)
 	if (arg_number <= 1)
 	{
 		ft_printf("%s\n", args[0]);
-		shut_program_default(main);		
+		shut_program_default(main);
 	}
 	utilized_main(main, args, arg_number);
 	check_duplicate(main);
 	init_index_value(main);
-	//display_int_stack(main -> stack_a);
 	if (!is_sorted(main -> stack_a))
 		sort(main);
-	//ft_printf("stack_a:\n");
-	//display_int_stack(main -> stack_a);
-	//ft_printf("stack_b:\n");
-	//display_int_stack(main -> stack_b);
 	shut_program_default(main);
 	return (0);
 }

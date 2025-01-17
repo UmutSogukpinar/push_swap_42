@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 13:34:42 by umut              #+#    #+#             */
-/*   Updated: 2025/01/07 15:47:46 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 16:44:32 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 16:44:33 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort.h"
 #include "stack.h"
 
 int	is_sorted(t_stack *stack)

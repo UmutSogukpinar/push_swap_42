@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 16:17:19 by umut              #+#    #+#             */
-/*   Updated: 2025/01/09 18:07:58 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 17:53:18 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 17:53:19 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	find_smallest_bigger_index(t_stack *stack, int index)
 	int	temp_index;
 
 	temp_index = 2147483647;
-	if(!stack)
+	if (!stack)
 		return (-1);
 	while (stack)
 	{
@@ -57,7 +57,7 @@ int	find_biggest_smaller_index(t_stack *stack, int index)
 	int	temp_index;
 
 	temp_index = -2147483648;
-	if(!stack)
+	if (!stack)
 		return (-1);
 	while (stack)
 	{
@@ -76,7 +76,7 @@ int	find_pos(t_stack *stack, int index)
 {
 	int	pos;
 
-	if(!stack)
+	if (!stack)
 		return (-1);
 	pos = 0;
 	while (stack)

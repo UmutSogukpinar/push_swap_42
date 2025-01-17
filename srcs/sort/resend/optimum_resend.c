@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alternate_resend.c                                   :+:      :+:    :+:   */
+/*   optimum_resend.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 23:10:25 by umut              #+#    #+#             */
-/*   Updated: 2025/01/08 14:42:46 by umut             ###   ########.fr       */
+/*   Created: 2025/01/17 17:10:55 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/17 17:15:27 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	opt_rsnd_utils_two(t_sort *main, t_way *alternate, int index)
 	int	i;
 
 	if (!(is_biggest(main -> stack_a, index)
-		|| is_smallest(main -> stack_a, index)))
+			|| is_smallest(main -> stack_a, index)))
 	{
 		temp_index = find_smallest_bigger_index(main -> stack_a, index);
 		if (temp_index == -1)
@@ -60,7 +60,7 @@ void	opt_rsnd_utils_two(t_sort *main, t_way *alternate, int index)
 				list_update(main, &(alternate -> list), ft_strdup("ra"));
 		else
 			while (++i < stack_size(main -> stack_a) - pos)
-					list_update(main, &(alternate -> list), ft_strdup("rra"));
+				list_update(main, &(alternate -> list), ft_strdup("rra"));
 		list_update(main, &(alternate -> list), ft_strdup("pa"));
 	}
 }
@@ -77,7 +77,7 @@ void	opt_rsnd_utils_zero(t_sort *main, t_way *alternate, int index)
 	else if (is_in_upper_part(main -> stack_b, pos))
 	{
 		while (++i < pos)
-			list_update(main, &(alternate -> list), ft_strdup("rb"));	
+			list_update(main, &(alternate -> list), ft_strdup("rb"));
 	}
 	else
 		while (++i < stack_size(main -> stack_b) - pos)
