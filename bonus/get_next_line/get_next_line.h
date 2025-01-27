@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 16:43:52 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/21 12:41:38 by usogukpi         ###   ########.fr       */
+/*   Created: 2024/11/02 15:47:35 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/25 16:26:07 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "actions.h"
-#include "ft_printf.h"
-#include "sort.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	swap_a(t_sort *main)
-{
-	swap(&(main->stack_a));
-	ft_printf("sa\n");
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 12
+# endif
 
-void	swap_b(t_sort *main)
-{
-	swap(&(main->stack_b));
-	ft_printf("sb\n");
-}
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+
+size_t	ft_strlen(const char *s);
+int		ft_is_newline_char(const char *s);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_update_repo(char *total_line, char *repo);
+#endif

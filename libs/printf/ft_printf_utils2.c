@@ -6,7 +6,7 @@
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:15:20 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:15:21 by usogukpi         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:43:02 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int	ft_print_adress(va_list args, char *base)
 	temp = va_arg(args, void *);
 	if (!temp)
 	{
-		write(1, "0x0", 3);
-		return (3);
+		write(1, "(nil)", 5);
+		return (5);
 	}
 	num = (unsigned long) temp;
 	write(1, "0x", 2);

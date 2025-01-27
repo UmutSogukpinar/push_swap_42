@@ -6,7 +6,7 @@
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:53:04 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 17:53:05 by usogukpi         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:07:43 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	is_str_same(char *s1, char *s2)
 {
-	if (ft_strlen(s1) == ft_strlen(s2)
-		&& ft_strncmp(s1, s2, ft_strlen(s1)) == 0)
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	if (ft_strlen(s1) == ft_strlen(s2) && ft_strncmp(s1, s2,
+			ft_strlen(s1)) == 0)
 		return (1);
 	else
 		return (0);
@@ -36,21 +38,25 @@ void	check_duplicate(t_sort *main)
 	t_stack	*temp_one;
 	t_stack	*temp_two;
 
-	temp_one = main -> stack_a;
-	while (temp_one -> next)
+	if (!main || !main->stack_a)
+		return ;
+	temp_one = main->stack_a;
+	while (temp_one)
 	{
-		temp_two = temp_one -> next;
+		temp_two = temp_one->next;
 		while (temp_two)
 		{
-			if (is_str_same(temp_one -> content, temp_two -> content))
+			if (temp_one->content && temp_two->content
+				&& is_numbers_equal((int *)temp_one->content,
+					(int *)temp_two->content))
 				shut_program_error(main);
-			temp_two = temp_two -> next;
+			temp_two = temp_two->next;
 		}
-		temp_one = temp_one -> next;
+		temp_one = temp_one->next;
 	}
 }
 
-long	atoi_long(char	*str)
+long	atoi_long(char *str)
 {
 	long	num;
 	int		sign;
@@ -59,8 +65,8 @@ long	atoi_long(char	*str)
 	num = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{

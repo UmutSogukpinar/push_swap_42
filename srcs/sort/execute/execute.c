@@ -6,7 +6,7 @@
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:51:10 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:53:12 by usogukpi         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:36:04 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ void	execute_commands(t_sort *main, char *command)
 		push_a(main);
 	else if (is_str_same(command, "pb"))
 		push_b(main);
-	else if (is_str_same(command, "sa"))
-		swap_a(main);
-	else if (is_str_same(command, "sb"))
-		swap_b(main);
-	else if (is_str_same(command, "ss"))
-		swap_both(main);
 	else if (is_str_same(command, "ra"))
 		rotate_a(main);
 	else if (is_str_same(command, "rb"))

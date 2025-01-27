@@ -6,7 +6,7 @@
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:04:44 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:04:47 by usogukpi         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:29:22 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	push_b(t_sort *main);
 
 void	swap_a(t_sort *main);
 void	swap_b(t_sort *main);
-void	swap_both(t_sort *main);
 
 void	rotate_a(t_sort *main);
 void	rotate_b(t_sort *main);

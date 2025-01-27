@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   shut_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 16:43:52 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/21 12:41:38 by usogukpi         ###   ########.fr       */
+/*   Created: 2025/01/20 13:06:26 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/01/20 15:14:47 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "actions.h"
+#include "bonus.h"
 #include "ft_printf.h"
-#include "sort.h"
+#include "libft.h"
 
-void	swap_a(t_sort *main)
+void	free_all(t_bonus *bonus);
+
+void	exit_default(t_bonus *bonus)
 {
-	swap(&(main->stack_a));
-	ft_printf("sa\n");
+	free_all(bonus);
+	exit(EXIT_SUCCESS);
 }
 
-void	swap_b(t_sort *main)
+void	exit_error(t_bonus *bonus)
 {
-	swap(&(main->stack_b));
-	ft_printf("sb\n");
+	free_all(bonus);
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
+}
+
+void	free_all(t_bonus *bonus)
+{
+	if (bonus)
+	{
+		ft_lstclear(&(bonus->stack_a), free);
+		ft_lstclear(&(bonus->stack_b), free);
+		ft_lstclear(&(bonus->execution_list), free);
+		free(bonus);
+	}
 }

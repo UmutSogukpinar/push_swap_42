@@ -6,7 +6,7 @@
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:34:56 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 17:35:45 by usogukpi         ###   ########.fr       */
+/*   Updated: 2025/01/25 13:26:41 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,14 @@ void	stack_update(t_sort *main, void *value)
 {
 	t_stack	*new;
 
-	new = create_node(value);
 	if (!value)
 		shut_program_error(main);
+	new = create_node(value);
+	if (!new)
+	{
+		if (value)
+			free(value);
+		shut_program_error(main);
+	}
 	stack_add_back(&(main -> stack_a), new);
 }
