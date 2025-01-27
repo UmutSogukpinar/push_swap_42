@@ -111,7 +111,7 @@ valgrind:			$(NAME)
 					$(eval ARG = $(shell shuf -i 0-5000 -n 100))
 					valgrind ./push_swap $(ARG)
 
-
+    
 bonus: $(BONUS_NAME)
 
 $(BONUS_NAME): $(BONUS_OBJS)
