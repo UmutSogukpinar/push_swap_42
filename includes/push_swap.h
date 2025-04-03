@@ -2,6 +2,7 @@
 #define PUSH_SWAP_H
 
 #include "libft.h"
+#include "structures.h"
 
 #define MAX_INT 2147483647
 #define MIN_INT -2147483648
@@ -9,46 +10,20 @@
 #define SPACE_S " "
 #define SPACE_C ' '
 
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-} t_bool;
+t_sort *init_sort_struct(char **args);
 
-typedef struct s_way
-{
-	int pa;
-	int pb;
-	int sa;
-	int sb;
-	int ss;
-	int ra;
-	int rb;
-	int rr;
-	int rra;
-	int rrb;
-	int rrr;
+void    shut_program_error(t_sort *sort, char *message);
+int    shut_program_success(t_sort *sort);
 
-} t_way;
+void 	free_2d_char_array(char **array);
+t_bool	are_strs_equal(char *s1, char *s2);
 
-typedef struct s_stack
-{
-	int value;
-	struct s_stack *next;
-
-} t_stack;
-
-typedef struct s_sort
-{
-	t_stack *stack_a;
-	t_stack *stack_b;
-	t_way *way;
-
-} t_sort;
-
-
-t_bool	are_args_proper(char **args);
 char	**modify_args(int argc, char **args);
-void    shut_program_error(char *message);
+t_bool	are_args_proper(char **args);
+t_bool	are_args_nul(int argc, char **args);
+
+void	stack_a_update(t_sort *main, char **args, char *value);
+void	stack_add_front(t_stack **stack, t_stack *new_stack);
+int		stack_size(t_stack *stack);
 
 #endif
