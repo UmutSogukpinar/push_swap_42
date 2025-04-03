@@ -2,17 +2,26 @@ NAME = push_swap
 
 LIB_DIR = libs/libft
 SRCS_DIR = sources
+STACK_DIR = $(SRCS_DIR)/stack
+OPERATIONS_DIR = $(SRCS_DIR)/operations
 UTILS_DIR = $(SRCS_DIR)/utils
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(LIB_DIR)
 RM = rm -rf
 
-SOURCES =	$(SRCS_DIR)/main.c 			\
-			$(SRCS_DIR)/init.c 			\
-			$(SRCS_DIR)/shut.c 			\
-			$(UTILS_DIR)/check_args.c	\
-			$(UTILS_DIR)/arrange_args.c	\
+SOURCES =	$(SRCS_DIR)/main.c 					\
+			$(SRCS_DIR)/init.c 					\
+			$(SRCS_DIR)/shut.c 					\
+			$(STACK_DIR)/stack.c 				\
+			$(OPERATIONS_DIR)/actions.c			\
+			$(OPERATIONS_DIR)/push.c			\
+			$(OPERATIONS_DIR)/swap.c			\
+			$(OPERATIONS_DIR)/rotate.c			\
+			$(OPERATIONS_DIR)/reverse_rotate.c	\
+			$(UTILS_DIR)/check_args.c			\
+			$(UTILS_DIR)/arrange_args.c			\
+			$(UTILS_DIR)/casual_utils.c			\
 
 
 OBJS = $(SOURCES:.c=.o)
