@@ -1,8 +1,9 @@
 #include "push_swap.h"
 
+// TODO: Implement the function to initialize stack_a
 int	main(int argc, char **args)
 {
-	//t_sort	*sort;
+	t_sort	*sort;
 	char	**modified_args;
 
 	if (argc < 2)
@@ -10,5 +11,6 @@ int	main(int argc, char **args)
 	modified_args = modify_args(argc, args);
 	if (!are_args_proper(modified_args))
 		return (EXIT_FAILURE);
-	
+	sort = init_sort_struct(modified_args);
+	return (EXIT_SUCCESS);
 }

@@ -8,10 +8,11 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(LIB_DIR)
 RM = rm -rf
 
-SOURCES =	$(SRCS_DIR)/main.c \
-			$(SRCS_DIR)/shut.c \
-			$(UTILS_DIR)/check_args.c \
-			$(UTILS_DIR)/arrange_args.c \
+SOURCES =	$(SRCS_DIR)/main.c 			\
+			$(SRCS_DIR)/init.c 			\
+			$(SRCS_DIR)/shut.c 			\
+			$(UTILS_DIR)/check_args.c	\
+			$(UTILS_DIR)/arrange_args.c	\
 
 
 OBJS = $(SOURCES:.c=.o)

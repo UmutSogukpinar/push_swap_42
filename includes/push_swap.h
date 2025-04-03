@@ -40,15 +40,15 @@ typedef struct s_stack
 
 typedef struct s_sort
 {
-	t_list *stack_a;
-	t_list *stack_b;
+	t_stack *stack_a;
+	t_stack *stack_b;
 	t_way *way;
 
 } t_sort;
 
 
 t_bool	are_args_proper(char **args);
-char **modify_args(int argc, char **args);
+char	**modify_args(int argc, char **args);
 void    shut_program_error(char *message);
 
 #endif
