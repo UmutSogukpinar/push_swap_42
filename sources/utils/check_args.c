@@ -28,15 +28,24 @@ t_bool are_args_proper(char **args)
 t_bool	are_args_nul(int argc, char **args)
 {
 	int	i;
+	char	*trimmed_arg;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_strlen(args[i]) == 0)
+		trimmed_arg = ft_strtrim(args[i], SPACE_S);
+		if (trimmed_arg == NULL)
 		{
+			ft_putendl_fd("Allocation Error on are_args_nul()", 2);
+			return (TRUE);
+		}
+		if (ft_strlen(trimmed_arg) == 0)
+		{
+			free(trimmed_arg);
 			ft_putendl_fd("Error", 2);
 			return (TRUE);
 		}
+		free(trimmed_arg);
 		i++;
 	}
 	return (FALSE);

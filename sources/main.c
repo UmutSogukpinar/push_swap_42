@@ -22,6 +22,18 @@ int	main(int argc, char **args)
     }
 	sort = init_sort_struct(modified_args);
 	print_sort(sort);
+    printf("=== t_sort ===\n");
+    if (is_sorted(sort->stack_a))
+    {
+	    print_sort(sort);
+        return (shut_program_success(sort));
+    }
+    else
+    {
+        printf("Stack A is not sorted\n");
+        sort_main(sort);
+    }
+	print_sort(sort);
 	return (shut_program_success(sort));
 }
 

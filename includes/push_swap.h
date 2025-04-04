@@ -26,4 +26,9 @@ void	stack_a_update(t_sort *main, char **args, char *value);
 void	stack_add_front(t_stack **stack, t_stack *new_stack);
 int		stack_size(t_stack *stack);
 
+t_bool	is_sorted(t_stack *stack);
+void    sort_main(t_sort *sort);
+void    sort_2_elements(t_sort *sort, int mode);
+void    sort_3_elements_asc(t_sort *sort);
+
 #endif

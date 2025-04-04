@@ -3,6 +3,7 @@ NAME = push_swap
 LIB_DIR = libs/libft
 SRCS_DIR = sources
 STACK_DIR = $(SRCS_DIR)/stack
+SORT_DIR = $(SRCS_DIR)/sort
 OPERATIONS_DIR = $(SRCS_DIR)/operations
 UTILS_DIR = $(SRCS_DIR)/utils
 
@@ -19,6 +20,8 @@ SOURCES =	$(SRCS_DIR)/main.c 					\
 			$(OPERATIONS_DIR)/swap.c			\
 			$(OPERATIONS_DIR)/rotate.c			\
 			$(OPERATIONS_DIR)/reverse_rotate.c	\
+			$(SORT_DIR)/sort.c					\
+			$(SORT_DIR)/sort_mini.c				\
 			$(UTILS_DIR)/check_args.c			\
 			$(UTILS_DIR)/arrange_args.c			\
 			$(UTILS_DIR)/casual_utils.c			\
