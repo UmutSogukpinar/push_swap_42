@@ -4,6 +4,11 @@
 static char *concat_all_args(int argc, char **args);
 static char *append_arg(char *head, char *added);
 
+/*
+ * Joins all arguments into a single string, splits them by space,
+ * and returns a modified argument array.
+ * Handles both standard and quoted argument formats.
+ */
 char **modify_args(int argc, char **args)
 {
     char	**modified_args;
@@ -17,6 +22,10 @@ char **modify_args(int argc, char **args)
     return (modified_args);
 }
 
+/*
+ * Concatenates all arguments from argv[1] to argv[argc - 1] into a single string.
+ * Adds a space between each argument to prepare for later splitting.
+ */
 static char *concat_all_args(int argc, char **args)
 {
     char    *head;
@@ -34,6 +43,10 @@ static char *concat_all_args(int argc, char **args)
     return (head);
 }
 
+/*
+ * Appends a space and the given argument to the existing string.
+ * Handles memory allocation and cleanup.
+ */
 static char *append_arg(char *head, char *added)
 {
     char    *temp;

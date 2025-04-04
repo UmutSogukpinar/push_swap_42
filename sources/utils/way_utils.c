@@ -4,6 +4,11 @@ static void minimize_way(t_way *way);
 static void fill_way_one(t_way *temp_way, t_sort *main, int index);
 static void fill_way_two(t_way *temp_way, t_sort *main, int index);
 
+/*
+ * Calculates the optimal set of operations to move an element
+ * between stacks based on the mode (A_TO_B or B_TO_A).
+ * Stores the operations in a t_way struct and minimizes the count.
+ */
 void fill_way(t_way *temp_way, t_sort *main, int index, int mode)
 {
 	if (mode == A_TO_B)
@@ -19,6 +24,10 @@ void fill_way(t_way *temp_way, t_sort *main, int index, int mode)
 	minimize_way(temp_way);
 }
 
+/*
+ * Combines common operations (ra + rb → rr, rra + rrb → rrr)
+ * to reduce the total number of moves required.
+ */
 static void	minimize_way(t_way *way)
 {
 	while (way->ra > 0 && way->rb > 0)
@@ -35,6 +44,10 @@ static void	minimize_way(t_way *way)
 	}
 }
 
+/*
+ * Calculates how many operations are needed to move an element
+ * from stack_a to its correct place in stack_b.
+ */
 static void fill_way_one(t_way *temp_way, t_sort *main, int index)
 {
 	int pos_a;
@@ -48,7 +61,7 @@ static void fill_way_one(t_way *temp_way, t_sort *main, int index)
 	if (pos_b == -1)
 	{
 		pos_b = get_position(main->stack_b,
-			get_biggest_index(main->stack_b));
+			get_biggest_index(main, main->stack_b));
 	}
 	size_a = stack_size(main->stack_a);
 	size_b = stack_size(main->stack_b);
@@ -61,6 +74,11 @@ static void fill_way_one(t_way *temp_way, t_sort *main, int index)
 	else
 		temp_way->rrb = size_b - pos_b;
 }
+
+/*
+ * Calculates how many operations are needed to move an element
+ * from stack_b to its correct place in stack_a.
+ */
 static void fill_way_two(t_way *temp_way, t_sort *main, int index)
 {
 	int pos_a;
@@ -74,7 +92,7 @@ static void fill_way_two(t_way *temp_way, t_sort *main, int index)
 	if (pos_a == -1)
 	{
 		pos_a = get_position(main->stack_a,
-			get_smallest_index(main->stack_a));
+			get_smallest_index(main, main->stack_a));
 	}
 	size_a = stack_size(main->stack_a);
 	size_b = stack_size(main->stack_b);
@@ -88,6 +106,10 @@ static void fill_way_two(t_way *temp_way, t_sort *main, int index)
 		temp_way->rrb = size_b - pos_b;
 }
 
+/*
+ * Returns the total number of operations in a given t_way.
+ * Used to compare different possible move plans.
+ */
 int get_operations_amount(t_way *way)
 {
     int amount;
@@ -95,15 +117,9 @@ int get_operations_amount(t_way *way)
     amount = 0;
     if (!way)
         return (amount);
-    amount += way-> sa;
-    amount += way-> sb;
-    amount += way-> ra;
-    amount += way-> rb;
-    amount += way-> rr;
-    amount += way-> rra;
-    amount += way-> rrb;
-    amount += way-> rrr;
-    amount += way-> pb;
-    amount += way-> pa;
+    amount += (way->sa) + (way->sb) + (way->ss);
+    amount += (way->ra) + (way->rb) + (way->rr);
+    amount += (way->rra) + (way->rrb)+ (way->rrr);
+    amount += (way->pb) + (way-> pa);
     return (amount);
 }

@@ -6,8 +6,9 @@ static t_bool	is_integer(char *arg);
 static t_bool	is_duplicate(char **args, char *arg, int index);
 
 /*
-* This function checks if the arguments passed to the program are valid. 
-*/
+ * Checks whether all arguments are valid integers within int range,
+ * non-empty, non-duplicated, and properly formatted.
+ */
 t_bool are_args_proper(char **args)
 {
 	int i;
@@ -26,9 +27,13 @@ t_bool are_args_proper(char **args)
 	return (TRUE);
 }
 
-t_bool	are_args_nul(int argc, char **args)
+/*
+ * Checks whether any of the original input arguments are null, 
+ * consist only of whitespaces, or failed trimming.
+ */
+t_bool are_args_nul(int argc, char **args)
 {
-	int	i;
+	int		i;
 	char	*trimmed_arg;
 
 	i = 1;
@@ -52,11 +57,13 @@ t_bool	are_args_nul(int argc, char **args)
 	return (FALSE);
 }
 
-static t_bool	is_duplicate(char **args, char *arg, int index)
+/*
+ * Checks if the given argument has already appeared in a previous index.
+ */
+static t_bool is_duplicate(char **args, char *arg, int index)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (i < index)
 	{
 		if (are_strs_equal(args[i], arg))
@@ -67,14 +74,14 @@ static t_bool	is_duplicate(char **args, char *arg, int index)
 }
 
 /*
-* This function checks if the argument that given as parameter is valid
-*/
-static t_bool	is_integer(char *arg)
+ * Verifies that the string is a properly formatted integer 
+ * and fits within 32-bit signed int range.
+ */
+static t_bool is_integer(char *arg)
 {
 	long	num;
-	int i;
+	int		i = 0;
 
-	i = 0;
 	if (arg[i] == '-' || arg[i] == '+')
 		i++;
 	while (arg[i])
@@ -89,13 +96,15 @@ static t_bool	is_integer(char *arg)
 	return (TRUE);
 }
 
-static long	ato_long(char *arg)
+/*
+ * Converts a numeric string into a long value.
+ * Handles optional '+' or '-' prefix.
+ */
+static long ato_long(char *arg)
 {
-	int		i;
-	long	num;
+	int		i = 0;
+	long	num = 0;
 
-	i = 0;
-	num = 0;
 	if (arg[i] == '-' || arg[i] == '+')
 		i++;
 	while (arg[i])
