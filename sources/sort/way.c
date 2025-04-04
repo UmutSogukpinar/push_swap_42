@@ -1,39 +1,48 @@
-#include "structures.h"
 #include "push_swap.h"
+#include "operations.h"
 
-void    create_way(t_sort *main)
+static void update_way(t_sort *main, t_way *temp_way);
+static void create_alternative_way(t_sort *main, int index, int mode);
+
+void create_way(t_sort *main, int mode)
 {
-	t_stack	*temp_a;
-	t_way	*temp_way;
+	t_stack	*temp;
 
-	temp_a = main -> stack_a;
-	while (temp_a)
+	if (mode == A_TO_B)
+		temp = main->stack_a;
+	else if (mode == B_TO_A)
+		temp = main->stack_b;
+	while (temp)
 	{
-		// TODO: temp_way = create_alternate_way(main, temp_a -> index);
-		// TODO: update_way(main, temp_way);
-		temp_a = temp_a -> next;
+		create_alternative_way(main, temp->index, mode);
+		temp = temp->next;
 	}
 }
 
-static t_way *create_alternative_way(t_sort *main, int index)
+static void create_alternative_way(t_sort *main, int index, int mode)
 {
-    t_way	*temp_way;
+	t_way *temp_way;
 
-    temp_way = ft_calloc(1, sizeof(t_way));
-    if (!temp_way)
-        shut_program_error(main, 
-            "Error: Memory allocation failed on create_alternate_way()");
-    fill_way(temp_way, main, index, A_TO_B);
-
+	temp_way = ft_calloc(1, sizeof(t_way));
+	if (!temp_way)
+		shut_program_error(main,
+					"Error: Memory allocation failed on create_alternate_way()");
+	fill_way(temp_way, main, index, mode);
+	update_way(main, temp_way);
 }
 
-static void fill_way(t_way *temp_way, t_sort *main, int index, int mode)
+static void update_way(t_sort *main, t_way *temp_way)
 {
-    if (mode == A_TO_B)
-        fill_way_one(temp_way, main, index);
-}
-
-static void fill_way_one(t_way *temp_way, t_sort *main, int index)
-{
-
+	if (!main->way)
+	{
+		main->way = temp_way;
+		return ;
+	}
+	if (get_operations_amount(main->way) > get_operations_amount(temp_way))
+	{
+		free(main->way);
+		main->way = temp_way;
+	}
+	else
+		free(temp_way);
 }

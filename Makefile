@@ -8,7 +8,8 @@ OPERATIONS_DIR = $(SRCS_DIR)/operations
 UTILS_DIR = $(SRCS_DIR)/utils
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(LIB_DIR)
+#CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(LIB_DIR)
+CFLAGS = -g -Iincludes -I$(LIB_DIR)
 RM = rm -rf
 
 SOURCES =	$(SRCS_DIR)/main.c 					\
@@ -22,10 +23,14 @@ SOURCES =	$(SRCS_DIR)/main.c 					\
 			$(OPERATIONS_DIR)/reverse_rotate.c	\
 			$(SORT_DIR)/sort.c					\
 			$(SORT_DIR)/sort_mini.c				\
+			$(SORT_DIR)/way.c					\
+			$(SORT_DIR)/execute.c				\
 			$(UTILS_DIR)/check_args.c			\
 			$(UTILS_DIR)/arrange_args.c			\
 			$(UTILS_DIR)/casual_utils.c			\
 			$(UTILS_DIR)/sort_utils.c			\
+			$(UTILS_DIR)/position.c				\
+			$(UTILS_DIR)/way_utils.c			\
 
 
 

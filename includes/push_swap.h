@@ -38,4 +38,18 @@ void    sort_main(t_sort *sort);
 void    sort_2_elements(t_sort *sort, int mode);
 void    sort_3_elements_asc(t_sort *sort);
 
+
+int get_position(t_stack *stack, int index);
+int	get_biggest_smaller_index(t_stack *stack, int given_index);
+int	get_smallest_bigger_index(t_stack *stack, int given_index);
+int get_smallest_index(t_stack *stack);
+int get_biggest_index(t_stack *stack);
+
+void fill_way(t_way *temp_way, t_sort *main, int index, int mode);
+void create_way(t_sort *main, int mode);
+void execute_way(t_sort *main);
+
+
+int get_operations_amount(t_way *way);
+
 #endif
