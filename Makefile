@@ -25,6 +25,8 @@ SOURCES =	$(SRCS_DIR)/main.c 					\
 			$(UTILS_DIR)/check_args.c			\
 			$(UTILS_DIR)/arrange_args.c			\
 			$(UTILS_DIR)/casual_utils.c			\
+			$(UTILS_DIR)/sort_utils.c			\
+
 
 
 OBJS = $(SOURCES:.c=.o)

@@ -17,7 +17,7 @@ t_bool are_args_proper(char **args)
 		if (ft_strlen(args[i]) == 0 || ft_strlen(args[i]) > 11
 			|| !is_integer(args[i]) || is_duplicate(args, args[i], i))
 		{
-			ft_putendl_fd("Error", 2);
+			ft_putendl_fd(ERROR_MSG, 2);
 			return (FALSE);
 		}
 		i++;
@@ -42,7 +42,7 @@ t_bool	are_args_nul(int argc, char **args)
 		if (ft_strlen(trimmed_arg) == 0)
 		{
 			free(trimmed_arg);
-			ft_putendl_fd("Error", 2);
+			ft_putendl_fd(ERROR_MSG, 2);
 			return (TRUE);
 		}
 		free(trimmed_arg);

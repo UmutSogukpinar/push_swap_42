@@ -10,6 +10,11 @@
 #define SPACE_S " "
 #define SPACE_C ' '
 
+#define ERROR_MSG "Error"
+
+#define B_TO_A 1
+#define A_TO_B 2
+
 t_sort *init_sort_struct(char **args);
 
 void    shut_program_error(t_sort *sort, char *message);
@@ -27,6 +32,8 @@ void	stack_add_front(t_stack **stack, t_stack *new_stack);
 int		stack_size(t_stack *stack);
 
 t_bool	is_sorted(t_stack *stack);
+t_bool  is_partly_sorted(t_stack *stack);
+
 void    sort_main(t_sort *sort);
 void    sort_2_elements(t_sort *sort, int mode);
 void    sort_3_elements_asc(t_sort *sort);

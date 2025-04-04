@@ -1,4 +1,7 @@
 #include "push_swap.h"
+#include "operations.h"
+
+static void sorting_setup(t_sort *sort);
 
 void    sort_main(t_sort *sort)
 {
@@ -10,17 +13,18 @@ void    sort_main(t_sort *sort)
         sort_deafult(sort);
 }
 
-t_bool	is_sorted(t_stack *stack)
+void    sort_deafult(t_sort *sort)
 {
-    if (!stack)
-        return (FALSE);
-    while (stack && stack->next)
+    sorting_setup(sort);
+    while (stack_size(sort->stack_a) > 3 && !is_partly_sorted(sort->stack_a))
     {
-        if (stack->value > stack->next->value)
-            return (FALSE);
-        stack = stack->next;
+        
     }
-    return (TRUE);
 }
 
-void    sort_deafult
+static void sorting_setup(t_sort *sort)
+{
+    push_b(sort);
+    push_b(sort);
+    sort_2_elements(sort, 2);
+}
