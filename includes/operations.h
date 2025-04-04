@@ -8,6 +8,7 @@ void	push_b(t_sort *main);
 
 void	swap_a(t_sort *main);
 void	swap_b(t_sort *main);
+void	swap_both(t_sort *main);
 
 void	rotate_a(t_sort *main);
 void	rotate_b(t_sort *main);

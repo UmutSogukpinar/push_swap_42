@@ -1,7 +1,6 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
-#include "libft.h"
 #include "structures.h"
 
 #define MAX_INT 2147483647
@@ -11,6 +10,7 @@
 #define SPACE_C ' '
 
 #define ERROR_MSG "Error"
+#define ERROR_EXIT_CODE 255
 
 #define B_TO_A 1
 #define A_TO_B 2
