@@ -1,5 +1,5 @@
-#include "operations.h"
 #include "stdlib.h"
+#include "operations.h"
 
 static void execute_way2(t_sort *main);
 static void execute_way3(t_sort *main);

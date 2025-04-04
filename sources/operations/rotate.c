@@ -1,5 +1,5 @@
-#include "actions.h"
 #include "libft.h"
+#include "actions.h"
 
 void	rotate_a(t_sort *main)
 {

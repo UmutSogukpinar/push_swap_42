@@ -1,5 +1,5 @@
-#include "actions.h"
 #include "libft.h"
+#include "actions.h"
 
 void	push_a(t_sort *main)
 {

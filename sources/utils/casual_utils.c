@@ -1,5 +1,5 @@
-#include "structures.h"
 #include "libft.h"
+#include "structures.h"
 
 t_bool are_strs_equal(char *s1, char *s2)
 {

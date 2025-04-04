@@ -1,3 +1,4 @@
+#include "stdlib.h"
 #include "push_swap.h"
 
 void	push(t_stack **source, t_stack **target)

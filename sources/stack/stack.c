@@ -1,3 +1,4 @@
+#include "libft.h"
 #include "push_swap.h"
 
 static t_stack	*create_node(char *value);

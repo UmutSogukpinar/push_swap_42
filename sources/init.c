@@ -1,3 +1,4 @@
+#include "libft.h"
 #include "push_swap.h"
 
 static void init_stack_a(t_sort *sort, char **args);

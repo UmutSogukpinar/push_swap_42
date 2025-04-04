@@ -1,3 +1,4 @@
+#include "libft.h"
 #include "push_swap.h"
 
 static long		ato_long(char *arg);

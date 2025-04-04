@@ -1,37 +1,39 @@
+#include "stdlib.h"
 #include "push_swap.h"
 // ! will be removed
 #include <stdio.h>
-#include "operations.h"
 
 // ! will be removed
 void print_sort(t_sort *sort);
 
-
-int	main(int argc, char **args)
+int main(int argc, char **args)
 {
-	t_sort	*sort;
-	char	**modified_args;
+    t_sort *sort;
+    char **modified_args;
 
-	if (argc < 2 || are_args_nul(argc, args))
-		return (EXIT_FAILURE);
-	modified_args = modify_args(argc, args);
-	if (!are_args_proper(modified_args))
-	{
+    if (argc < 2)
+        return (EXIT_SUCCESS);
+    if (are_args_nul(argc, args))
+        return (ERROR_EXIT_CODE);
+    modified_args = modify_args(argc, args);
+    if (!are_args_proper(modified_args))
+    {
         free_2d_char_array(modified_args);
-        return (EXIT_FAILURE);
+        return (ERROR_EXIT_CODE);
     }
-	sort = init_sort_struct(modified_args);
+    sort = init_sort_struct(modified_args);
     if (is_sorted(sort->stack_a))
         return (shut_program_success(sort));
     else
-    {
         sort_main(sort);
-    }
-	return (shut_program_success(sort));
+    shut_program_success(sort);
+    return (EXIT_SUCCESS);
 }
 
-void print_way(t_way *way) {
-    if (!way) {
+void print_way(t_way *way)
+{
+    if (!way)
+    {
         printf("way: (null)\n");
         return;
     }
@@ -50,23 +52,28 @@ void print_way(t_way *way) {
     printf("  rrr: %d\n", way->rrr);
 }
 
-void print_stack(const char *name, t_stack *stack) {
+void print_stack(const char *name, t_stack *stack)
+{
     printf("%s:\n", name);
-    if (!stack) {
+    if (!stack)
+    {
         printf("  (empty)\n");
         return;
     }
 
     int i = 0;
-    while (stack) {
+    while (stack)
+    {
         printf("  [%d] value: %d, index: %d\n", i, stack->value, stack->index);
         stack = stack->next;
         i++;
     }
 }
 
-void print_sort(t_sort *sort) {
-    if (!sort) {
+void print_sort(t_sort *sort)
+{
+    if (!sort)
+    {
         printf("sort: (null)\n");
         return;
     }

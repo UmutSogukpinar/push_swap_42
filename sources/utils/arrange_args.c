@@ -1,3 +1,4 @@
+#include "libft.h"
 #include "push_swap.h"
 
 static char *concat_all_args(int argc, char **args);
