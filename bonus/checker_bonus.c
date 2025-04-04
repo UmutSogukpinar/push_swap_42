@@ -27,9 +27,9 @@ int main(int argc, char **args)
     sort = init_sort_struct(modified_args);
     execute_all_instructions(sort);
     if (is_sorted(sort->stack_a) && stack_size(sort->stack_b) == 0)
-        ft_putstr_fd("OK\n", 1);
+        ft_putendl_fd("OK", 1);
     else
-        ft_putstr_fd("KO\n", 1);
+        ft_putendl_fd("KO", 1);
     shut_program_success(sort);
     return (EXIT_SUCCESS);
 }
