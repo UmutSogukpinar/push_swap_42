@@ -38,9 +38,8 @@ SOURCES =	$(SRCS_DIR)/main.c 					\
 			$(UTILS_DIR)/check_args.c			\
 			$(UTILS_DIR)/arrange_args.c			\
 			$(UTILS_DIR)/casual_utils.c			\
-			$(UTILS_DIR)/sort_utils.c			\
 			$(UTILS_DIR)/position.c				\
-			$(UTILS_DIR)/way_utils.c
+			$(UTILS_DIR)/way_utils.c			\
 
 # Bonus sources
 BONUS_SOURCES =	$(BONUS_DIR)/checker_bonus.c		\
@@ -57,7 +56,6 @@ BONUS_SOURCES =	$(BONUS_DIR)/checker_bonus.c		\
 				$(UTILS_DIR)/check_args.c			\
 				$(UTILS_DIR)/arrange_args.c			\
 				$(UTILS_DIR)/casual_utils.c			\
-				$(UTILS_DIR)/sort_utils.c			\
 
 # Object files
 OBJS = $(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
@@ -66,24 +64,26 @@ BONUS_OBJS = $(addprefix $(OBJ_DIR)/, $(BONUS_SOURCES:.c=.o))
 # Compile rule
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
-	@echo "$(BOLD)🔨 Compiling:$(RESET) $(GREEN)$<$(RESET)"
+	@echo "$(BOLD)🔨 Compiling: $(RESET) $(GREEN) $< $(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(MAKE) -C $(LIB_DIR) --silent
+	@echo "$(GREEN)✅ Libft build complete!$(RESET)"
 	@echo "$(BOLD)📦 Linking:$(RESET) $(GREEN)$(NAME)$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJS) $(LIB_DIR)/libft.a -o $(NAME)
-	@echo "$(GREEN)✅ Build complete!$(RESET)"
+	@echo "$(GREEN)✅ Build completed successfully for user: $(shell whoami) $(RESET)"
 
 bonus: $(BONUS_NAME)
 
 $(BONUS_NAME): $(BONUS_OBJS)
 	@$(MAKE) -C $(LIB_DIR) --silent
+	@echo "$(GREEN)✅ Libft build complete!$(RESET)"
 	@echo "$(BOLD)📦 Linking:$(RESET) $(GREEN)$(BONUS_NAME)$(RESET)"
 	@$(CC) $(BONUS_CFLAGS) $(BONUS_OBJS) $(LIB_DIR)/libft.a -o $(BONUS_NAME)
-	@echo "$(GREEN)✅ Bonus (checker) build complete!$(RESET)"
+	@echo "$(GREEN)✅ Bonus (checker) build complete for user: $(shell whoami) $(RESET)"
 
 clean:
 	@$(MAKE) -C $(LIB_DIR) fclean --silent
@@ -99,7 +99,8 @@ re: fclean all
 # Test targets
 test2 test3 test5 test100 test500: $(NAME)
 	$(eval ARG = $(shell shuf -i 0-5000 -n $(subst test,,$@)))
-	./push_swap $(ARG) | ./checker_linux $(ARG)
+	@echo -n "Status: " 
+	@./push_swap $(ARG) | ./checker_linux $(ARG)
 	@echo -n "Instructions: "
 	@./push_swap $(ARG) | wc -l
 

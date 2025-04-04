@@ -1,6 +1,13 @@
 #include "libft.h"
 #include "actions.h"
 
+/*
+ * Executes rotate operations and prints the command.
+ * - rotate_a: stack_a ↑ ("ra")
+ * - rotate_b: stack_b ↑ ("rb")
+ * - rotate_both: both stacks ↑ ("rr")
+ */
+
 void	rotate_a(t_sort *main)
 {
 	rotate(&(main -> stack_a));

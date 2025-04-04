@@ -1,6 +1,10 @@
 #include "stdlib.h"
 #include "push_swap.h"
 
+/*
+ * Pushes the top element from the source stack to the top of the target stack.
+ * If the source stack is empty, no operation is performed.
+ */
 void	push(t_stack **source, t_stack **target)
 {
 	t_stack	*source_head;
@@ -15,6 +19,10 @@ void	push(t_stack **source, t_stack **target)
 	stack_add_front(target, source_head);
 }
 
+/*
+ * Swaps the first two elements of the given stack.
+ * If the stack has fewer than two elements, no operation is performed.
+ */
 void	swap(t_stack **stack)
 {
 	t_stack	*first_node;
@@ -29,6 +37,10 @@ void	swap(t_stack **stack)
 	*stack = second_node;
 }
 
+/*
+ * Rotates the given stack upwards.
+ * The first element becomes the last one.
+ */
 void	rotate(t_stack **stack)
 {
 	t_stack	*first_node;
@@ -46,6 +58,12 @@ void	rotate(t_stack **stack)
 	last_node -> next = first_node;
 	first_node -> next = NULL;
 }
+
+/*
+ * Rotates the given stack downwards.
+ * The last element becomes the first one.
+ * If the stack has only two elements, it simply performs a rotate.
+ */
 
 void	reverse_rotate(t_stack **stack)
 {

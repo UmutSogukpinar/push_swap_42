@@ -4,6 +4,10 @@
 static t_stack	*create_node(char *value);
 static void	stack_add_back(t_stack **stack, t_stack *new_stack);
 
+/*
+ * Adds a new node to stack_a in the main sort structure.
+ * If memory allocation fails during node creation, prints an error and exits.
+ */
 void	stack_a_update(t_sort *main, char **args, char *value)
 {
 	t_stack	*new;
@@ -17,6 +21,10 @@ void	stack_a_update(t_sort *main, char **args, char *value)
 	stack_add_back(&(main -> stack_a), new);
 }
 
+/*
+ * Adds a new node to the front of the given stack.
+ * Used for stack operations that require pushing elements to the top.
+ */
 void	stack_add_front(t_stack **stack, t_stack *new_stack)
 {
 	if (!stack || !new_stack)
@@ -25,6 +33,9 @@ void	stack_add_front(t_stack **stack, t_stack *new_stack)
 	*stack = new_stack;
 }
 
+/*
+ * Returns the number of elements (nodes) in the given stack.
+ */
 int	stack_size(t_stack *stack)
 {
 	int	count;
@@ -38,6 +49,10 @@ int	stack_size(t_stack *stack)
 	return (count);
 }
 
+/*
+ * Adds a new node to the end of the given stack.
+ * If the stack is empty, the new node becomes the head.
+ */
 static void	stack_add_back(t_stack **stack, t_stack *new_stack)
 {
 	t_stack	*temp;
@@ -55,6 +70,11 @@ static void	stack_add_back(t_stack **stack, t_stack *new_stack)
 	temp -> next = new_stack;
 }
 
+/*
+ * Creates a new stack node from the given string value.
+ * Converts the string to an integer, sets default index to -1.
+ * Returns NULL if memory allocation fails.
+ */
 static t_stack	*create_node(char *value)
 {
     t_stack	*node;

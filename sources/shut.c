@@ -4,6 +4,20 @@
 static void free_push_swap(t_sort *sort);
 static void	stack_clear(t_stack **stack);
 
+/*
+ * Handles shutdown of the push_swap program.
+ *
+ * Provides utility functions to free all dynamically allocated memory
+ * associated with the t_sort structure, including both stacks and sorting paths.
+ *
+ * - shut_program_error: Prints an error message (if provided), frees memory (if provided), 
+ *      and exits with code 255.
+ * - shut_program_success: Frees all allocated memory in main struct,
+ *      and returns EXIT_SUCCESS.
+ * - free_push_swap: Internal helper to clean up the t_sort struct.
+ * - stack_clear: Frees all nodes in a stack (linked list).
+ */
+
 void    shut_program_error(t_sort *sort, char *message)
 {
     if (message)
@@ -28,8 +42,6 @@ static void free_push_swap(t_sort *sort)
         stack_clear(&sort->stack_b);
     free(sort->way);
     free(sort);
-    // TODO: Implement Stack free function for stack_a and stack_b
-    // TODO: Implement free function for way struct
 }
 
 static void	stack_clear(t_stack **stack)
@@ -45,4 +57,3 @@ static void	stack_clear(t_stack **stack)
 		free(temp);
 	}
 }
-

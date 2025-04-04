@@ -5,6 +5,15 @@ static void sorting_setup(t_sort *sort);
 static void sort_default(t_sort *sort);
 static void final_sort(t_sort *sort);
 
+/*
+ * Sorting logic for the push_swap algorithm.
+ *
+ * - sort_main: Chooses the sorting strategy based on stack_a size.
+ * - sort_default: Handles sorting for stacks with 4+ elements using calculated moves.
+ * - final_sort: Brings the smallest value to the top of stack_a after sorting.
+ * - sorting_setup: Prepares sorting by pushing 2 elements to stack_b and sorting them.
+ */
+
 void    sort_main(t_sort *sort)
 {
     if (stack_size(sort->stack_a) == 2)
@@ -17,8 +26,11 @@ void    sort_main(t_sort *sort)
 
 static void sort_default(t_sort *sort)
 {
+    int stack_a_size;
+
     sorting_setup(sort);
-    while (stack_size(sort->stack_a) > 3 && !is_partly_sorted(sort->stack_a))
+    stack_a_size = stack_size(sort->stack_a);
+    while (stack_a_size > 3 && !is_partly_sorted(sort->stack_a))
     {
         create_way(sort, A_TO_B);
         execute_way(sort);
@@ -42,7 +54,7 @@ static void final_sort(t_sort *sort)
 	int		size;
 	int		i;
 
-	smallest_index = get_smallest_index(stack);
+	smallest_index = get_smallest_index(sort, stack);
 	pos = get_position(stack, smallest_index);
 	size = stack_size(stack);
     i = -1;
