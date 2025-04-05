@@ -18,11 +18,12 @@ void    sort_3_elements_asc(t_sort *sort)
 {
     t_stack *stack_a;
 
+    if (!sort)
+        return ;
     stack_a = sort->stack_a;
     int first = stack_a->value;
     int second = stack_a->next->value;
     int third = stack_a->next->next->value;
-
     if (first > second && second < third && first < third)
         swap_a(sort);
     else if (first > second && second > third)

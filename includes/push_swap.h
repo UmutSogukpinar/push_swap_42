@@ -20,6 +20,21 @@ t_sort *init_sort_struct(char **args);
 void    shut_program_error(t_sort *sort, char *message);
 int    shut_program_success(t_sort *sort);
 
+void    sort_main(t_sort *sort);
+void    sort_2_elements(t_sort *sort, int mode);
+void    sort_3_elements_asc(t_sort *sort);
+
+void fill_way(t_way *temp_way, t_sort *main, int index, int mode);
+void create_way(t_sort *main, int mode);
+void execute_way(t_sort *main);
+int get_operations_amount(t_way *way);
+
+int get_position(t_stack *stack, int index);
+int	get_biggest_smaller_index(t_stack *stack, int given_index);
+int	get_smallest_bigger_index(t_stack *stack, int given_index);
+int get_smallest_index(t_sort *main, t_stack *stack);
+int get_biggest_index(t_sort *main, t_stack *stack);
+
 void 	free_2d_char_array(char **array);
 t_bool	are_strs_equal(char *s1, char *s2);
 
@@ -33,23 +48,5 @@ int		stack_size(t_stack *stack);
 
 t_bool	is_sorted(t_stack *stack);
 t_bool  is_partly_sorted(t_stack *stack);
-
-void    sort_main(t_sort *sort);
-void    sort_2_elements(t_sort *sort, int mode);
-void    sort_3_elements_asc(t_sort *sort);
-
-
-int get_position(t_stack *stack, int index);
-int	get_biggest_smaller_index(t_stack *stack, int given_index);
-int	get_smallest_bigger_index(t_stack *stack, int given_index);
-int get_smallest_index(t_sort *main, t_stack *stack);
-int get_biggest_index(t_sort *main, t_stack *stack);
-
-void fill_way(t_way *temp_way, t_sort *main, int index, int mode);
-void create_way(t_sort *main, int mode);
-void execute_way(t_sort *main);
-
-
-int get_operations_amount(t_way *way);
 
 #endif

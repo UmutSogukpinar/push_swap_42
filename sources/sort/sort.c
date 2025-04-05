@@ -16,6 +16,8 @@ static void final_sort(t_sort *sort);
 
 void    sort_main(t_sort *sort)
 {
+    if (!sort)
+        return ;
     if (stack_size(sort->stack_a) == 2)
         sort_2_elements(sort, 1);
     else if (stack_size(sort->stack_a) == 3)
