@@ -32,6 +32,8 @@ void execute_way(t_sort *main)
  */
 static void execute_opt(void (*opt)(t_sort *), t_sort *main, int times)
 {
+    if (!opt || !main || times <= 0)
+        return ;
 	int i = -1;
 	while (++i < times)
 		opt(main);
