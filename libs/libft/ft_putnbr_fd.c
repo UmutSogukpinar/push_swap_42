@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 16:08:26 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:08:27 by usogukpi         ###   ########.fr       */
+/*   Created: 2024/10/24 20:50:35 by usogukpi          #+#    #+#             */
+/*   Updated: 2024/10/24 20:50:37 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 16:09:00 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:09:01 by usogukpi         ###   ########.fr       */
+/*   Created: 2024/10/24 20:51:17 by usogukpi          #+#    #+#             */
+/*   Updated: 2024/10/24 20:51:18 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

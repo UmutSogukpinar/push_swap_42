@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 16:07:26 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:07:27 by usogukpi         ###   ########.fr       */
+/*   Created: 2024/10/24 20:49:04 by usogukpi          #+#    #+#             */
+/*   Updated: 2024/10/24 20:49:06 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_lstmap_helper_func(t_list **head, t_list **lst, t_list *new_node)
+void static	ft_lstmap_helper_func(t_list **head, t_list **lst, t_list *new_node)
 {
 	t_list	*temp;
 

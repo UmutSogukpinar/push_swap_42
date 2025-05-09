@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 15:45:00 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/05/06 18:38:30 by usogukpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "push_swap.h"
 
@@ -5,13 +17,9 @@ static long		ato_long(char *arg);
 static t_bool	is_integer(char *arg);
 static t_bool	is_duplicate(char **args, char *arg, int index);
 
-/*
- * Checks whether all arguments are valid integers within int range,
- * non-empty, non-duplicated, and properly formatted.
- */
-t_bool are_args_proper(char **args)
+t_bool	are_args_proper(char **args)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (args[i])
@@ -27,11 +35,7 @@ t_bool are_args_proper(char **args)
 	return (TRUE);
 }
 
-/*
- * Checks whether any of the original input arguments are null, 
- * consist only of whitespaces, or failed trimming.
- */
-t_bool are_args_nul(int argc, char **args)
+t_bool	are_args_nul(int argc, char **args)
 {
 	int		i;
 	char	*trimmed_arg;
@@ -57,13 +61,11 @@ t_bool are_args_nul(int argc, char **args)
 	return (FALSE);
 }
 
-/*
- * Checks if the given argument has already appeared in a previous index.
- */
-static t_bool is_duplicate(char **args, char *arg, int index)
+static t_bool	is_duplicate(char **args, char *arg, int index)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (i < index)
 	{
 		if (are_strs_equal(args[i], arg))
@@ -73,17 +75,18 @@ static t_bool is_duplicate(char **args, char *arg, int index)
 	return (FALSE);
 }
 
-/*
- * Verifies that the string is a properly formatted integer 
- * and fits within 32-bit signed int range.
- */
-static t_bool is_integer(char *arg)
+static t_bool	is_integer(char *arg)
 {
 	long	num;
-	int		i = 0;
+	int		i;
 
+	i = 0;
 	if (arg[i] == '-' || arg[i] == '+')
+	{
 		i++;
+		if (!ft_isdigit(arg[i]))
+			return (FALSE);
+	}
 	while (arg[i])
 	{
 		if (!ft_isdigit(arg[i]))
@@ -100,11 +103,13 @@ static t_bool is_integer(char *arg)
  * Converts a numeric string into a long value.
  * Handles optional '+' or '-' prefix.
  */
-static long ato_long(char *arg)
+static long	ato_long(char *arg)
 {
-	int		i = 0;
-	long	num = 0;
+	int		i;
+	long	num;
 
+	i = 0;
+	num = 0;
 	if (arg[i] == '-' || arg[i] == '+')
 		i++;
 	while (arg[i])

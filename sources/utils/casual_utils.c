@@ -1,10 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   casual_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 15:44:49 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/05/06 15:28:19 by usogukpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "structures.h"
 
-/*
- * Returns TRUE if two strings are exactly equal in length and content.
- */
-t_bool are_strs_equal(char *s1, char *s2)
+t_bool	are_strs_equal(char *s1, char *s2)
 {
 	if (ft_strlen(s1) != ft_strlen(s2))
 		return (FALSE);
@@ -13,17 +22,14 @@ t_bool are_strs_equal(char *s1, char *s2)
 	return (FALSE);
 }
 
-/*
- * Frees a dynamically allocated 2D char array (null-terminated).
- */
-void free_2d_char_array(char **array) 
+void	free_2d_char_array(char **array)
 {
-	int i;
+	int	i;
 
-	if (!array) 
-		return;
+	if (!array)
+		return ;
 	i = 0;
-	while (array[i]) 
+	while (array[i])
 	{
 		free(array[i]);
 		i++;
@@ -31,10 +37,7 @@ void free_2d_char_array(char **array)
 	free(array);
 }
 
-/*
- * Checks if a stack is fully sorted in ascending order.
- */
-t_bool is_sorted(t_stack *stack)
+t_bool	is_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (FALSE);
@@ -47,13 +50,10 @@ t_bool is_sorted(t_stack *stack)
 	return (TRUE);
 }
 
-/*
- * Checks if the stack is sorted with at most one rotation point.
- */
-t_bool is_partly_sorted(t_stack *stack)
+t_bool	is_partly_sorted(t_stack *stack)
 {
-	t_stack *head;
-	int breaks;
+	t_stack	*head;
+	int		breaks;
 
 	if (!stack || !stack->next)
 		return (FALSE);

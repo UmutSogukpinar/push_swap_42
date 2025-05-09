@@ -1,18 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 15:32:08 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/05/06 15:35:21 by usogukpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "stdlib.h"
 #include "operations.h"
 
-static void execute_opt(void (*op)(t_sort *), t_sort *main, int times);
+static void	execute_opt(void (*op)(t_sort *), t_sort *main, int times);
 
-/*
- * Executes the sequence of operations stored in the 't_way' structure.
- * Uses a generic 'execute_opt' helper to perform each operation multiple times.
- * After execution, frees the 'way' structure and clears its reference.
- */
-void execute_way(t_sort *main)
+void	execute_way(t_sort *main)
 {
-	t_way *way;
+	t_way	*way;
 
-    way = main->way;
+	way = main->way;
 	if (!way)
 		return ;
 	execute_opt(rotate_b, main, way->rb);
@@ -27,14 +34,15 @@ void execute_way(t_sort *main)
 	main->way = NULL;
 }
 
-/*
- * Calls the given operation function 'times' times on the provided sort context.
- */
-static void execute_opt(void (*opt)(t_sort *), t_sort *main, int times)
+static void	execute_opt(void (*opt)(t_sort *), t_sort *main, int times)
 {
-    if (!opt || !main || times <= 0)
-        return ;
-	int i = -1;
+	int	i;
+
+	if (!opt || !main || times <= 0)
+	{
+		return ;
+	}
+	i = -1;
 	while (++i < times)
 		opt(main);
 }

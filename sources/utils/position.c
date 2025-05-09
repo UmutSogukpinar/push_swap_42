@@ -1,13 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   position.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 15:45:05 by usogukpi          #+#    #+#             */
+/*   Updated: 2025/05/06 15:31:17 by usogukpi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-/*
- * Returns the position (0-based) of the node with the given index in the stack.
- * If not found, returns -1.
- */
-int get_position(t_stack *stack, int index)
+int	get_position(t_stack *stack, int index)
 {
-	int position = 0;
+	int	position;
 
+	position = 0;
 	while (stack)
 	{
 		if (stack->index == index)
@@ -18,14 +27,11 @@ int get_position(t_stack *stack, int index)
 	return (-1);
 }
 
-/*
- * Returns the largest index in the stack that is smaller than the given index.
- * Used for insertion point calculation in A_TO_B mode.
- */
-int get_biggest_smaller_index(t_stack *stack, int given_index)
+int	get_biggest_smaller_index(t_stack *stack, int given_index)
 {
-	int max_index = -1;
+	int	max_index;
 
+	max_index = -1;
 	while (stack)
 	{
 		if (stack->index < given_index && stack->index > max_index)
@@ -35,15 +41,11 @@ int get_biggest_smaller_index(t_stack *stack, int given_index)
 	return (max_index);
 }
 
-/*
- * Returns the smallest index in the stack that is greater than the given index.
- * Used for insertion point calculation in B_TO_A mode.
- */
-int get_smallest_bigger_index(t_stack *stack, int given_index)
+int	get_smallest_bigger_index(t_stack *stack, int given_index)
 {
-	int min_index;
-    
-    min_index = MAX_INT;
+	int	min_index;
+
+	min_index = MAX_INT;
 	while (stack)
 	{
 		if (stack->index > given_index && stack->index < min_index)
@@ -55,16 +57,13 @@ int get_smallest_bigger_index(t_stack *stack, int given_index)
 	return (min_index);
 }
 
-/*
- * Returns the highest index found in the given stack.
- */
-int get_biggest_index(t_sort *main, t_stack *stack)
+int	get_biggest_index(t_sort *main, t_stack *stack)
 {
-	int max_index;
+	int	max_index;
 
 	if (!stack)
 		shut_program_error(main,
-                "Error: Stack is empty in get_biggest_index()");
+			"Error: Stack is empty in get_biggest_index()");
 	max_index = stack->index;
 	while (stack)
 	{
@@ -75,16 +74,13 @@ int get_biggest_index(t_sort *main, t_stack *stack)
 	return (max_index);
 }
 
-/*
- * Returns the lowest index found in the given stack.
- */
-int get_smallest_index(t_sort *main, t_stack *stack)
+int	get_smallest_index(t_sort *main, t_stack *stack)
 {
-	int min_index;
+	int	min_index;
 
 	if (!stack)
 		shut_program_error(main,
-                "Error: Stack is empty in get_smallest_index()");
+			"Error: Stack is empty in get_smallest_index()");
 	min_index = stack->index;
 	while (stack)
 	{

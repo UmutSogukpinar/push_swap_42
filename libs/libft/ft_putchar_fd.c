@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 16:08:13 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:08:14 by usogukpi         ###   ########.fr       */
+/*   Created: 2024/10/24 20:50:05 by usogukpi          #+#    #+#             */
+/*   Updated: 2024/10/24 20:50:09 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)

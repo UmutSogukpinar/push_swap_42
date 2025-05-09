@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:51:35 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/04/04 19:23:56 by umut             ###   ########.fr       */
+/*   Updated: 2025/04/22 15:55:12 by usogukpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "fcntl.h"
-#include "unistd.h"
 #include "get_next_line.h"
+#include "libft.h"
+#include "unistd.h"
 
 int	ft_is_newline_char(const char *s)
 {
