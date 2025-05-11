@@ -1,15 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:54:42 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/05/06 15:26:18 by usogukpi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "unistd.h"
 #include "actions.h"
 #include "gnl/get_next_line.h"
 #include "libft.h"
@@ -36,11 +25,15 @@ int	main(int argc, char **args)
 		return (ERROR_EXIT_CODE);
 	}
 	sort = init_sort_struct(modified_args);
+	if (!check_duplicates(sort))
+	{
+		shut_program_error(sort, ERROR_MSG);
+	}
 	execute_all_instructions(sort);
 	if (is_sorted(sort->stack_a) && stack_size(sort->stack_b) == 0)
-		ft_putendl_fd("OK", 1);
+		ft_putendl_fd("OK", STDOUT_FILENO);
 	else
-		ft_putendl_fd("KO", 1);
+		ft_putendl_fd("KO", STDOUT_FILENO);
 	shut_program_success(sort);
 	return (EXIT_SUCCESS);
 }
@@ -55,7 +48,7 @@ static void	execute_all_instructions(t_sort *sort)
 		line = get_next_line(0);
 		if (!line)
 			break ;
-		instruction = ft_strtrim(line, "\n");
+		instruction = ft_strtrim(line, NEWLINE);
 		free(line);
 		if (!instruction)
 			shut_program_error(sort, "Alloc error on execute_instructions()");
@@ -65,7 +58,7 @@ static void	execute_all_instructions(t_sort *sort)
 		{
 			clear_gnl();
 			free(instruction);
-			shut_program_error(sort, "Error");
+			shut_program_error(sort, ERROR_MSG);
 		}
 		free(instruction);
 	}

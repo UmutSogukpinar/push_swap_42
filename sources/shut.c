@@ -1,15 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   shut.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:47:23 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/05/06 15:27:03 by usogukpi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "unistd.h"
 #include "libft.h"
 #include "structures.h"
 
@@ -19,7 +8,7 @@ static void	stack_clear(t_stack **stack);
 void	shut_program_error(t_sort *sort, char *message)
 {
 	if (message)
-		ft_putendl_fd(message, 2);
+		ft_putendl_fd(message, STDERR_FILENO);
 	free_push_swap(sort);
 	exit(255);
 }

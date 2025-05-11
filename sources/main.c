@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:47:11 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/05/06 15:27:10 by usogukpi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 #include "stdlib.h"
 
@@ -29,6 +17,10 @@ int	main(int argc, char **args)
 		return (ERROR_EXIT_CODE);
 	}
 	sort = init_sort_struct(modified_args);
+	if (!check_duplicates(sort))
+	{
+		shut_program_error(sort, ERROR_MSG);
+	}
 	if (is_sorted(sort->stack_a))
 		return (shut_program_success(sort));
 	else

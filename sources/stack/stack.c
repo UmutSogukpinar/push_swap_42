@@ -1,15 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:43:25 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/05/06 15:34:45 by usogukpi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "unistd.h"
 #include "libft.h"
 #include "push_swap.h"
 
@@ -74,7 +63,7 @@ static t_stack	*create_node(char *value)
 	node = ft_calloc(1, sizeof(t_stack));
 	if (!node)
 	{
-		ft_putendl_fd("Error: Memory allocation failed on create_node()", 2);
+		ft_putendl_fd("Error: Memory allocation failed on create_node()", STDERR_FILENO);
 		return (NULL);
 	}
 	node->value = ft_atoi(value);

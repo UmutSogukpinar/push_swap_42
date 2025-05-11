@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: umut <umut@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:28:46 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/04/22 15:29:30 by usogukpi         ###   ########.fr       */
+/*   Updated: 2025/05/11 12:46:42 by umut             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 
 # define B_TO_A 1
 # define A_TO_B 2
+
+#define NEWLINE "\n"
 
 t_sort	*init_sort_struct(char **args);
 
@@ -52,6 +54,7 @@ t_bool	are_strs_equal(char *s1, char *s2);
 
 char	**modify_args(int argc, char **args);
 t_bool	are_args_proper(char **args);
+t_bool  check_duplicates(t_sort *sort);
 t_bool	are_args_nul(int argc, char **args);
 
 void	stack_a_update(t_sort *main, char **args, char *value);

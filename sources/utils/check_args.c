@@ -1,21 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:45:00 by usogukpi          #+#    #+#             */
-/*   Updated: 2025/05/06 18:38:30 by usogukpi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "unistd.h"
 #include "libft.h"
 #include "push_swap.h"
 
 static long		ato_long(char *arg);
 static t_bool	is_integer(char *arg);
-static t_bool	is_duplicate(char **args, char *arg, int index);
 
 t_bool	are_args_proper(char **args)
 {
@@ -25,9 +13,9 @@ t_bool	are_args_proper(char **args)
 	while (args[i])
 	{
 		if (ft_strlen(args[i]) == 0 || ft_strlen(args[i]) > 11
-			|| !is_integer(args[i]) || is_duplicate(args, args[i], i))
+			|| !is_integer(args[i]))
 		{
-			ft_putendl_fd(ERROR_MSG, 2);
+			ft_putendl_fd(ERROR_MSG, STDERR_FILENO);
 			return (FALSE);
 		}
 		i++;
@@ -46,30 +34,16 @@ t_bool	are_args_nul(int argc, char **args)
 		trimmed_arg = ft_strtrim(args[i], SPACE_S);
 		if (trimmed_arg == NULL)
 		{
-			ft_putendl_fd("Allocation Error on are_args_nul()", 2);
+			ft_putendl_fd("Allocation Error on are_args_nul()", STDERR_FILENO);
 			return (TRUE);
 		}
 		if (ft_strlen(trimmed_arg) == 0)
 		{
 			free(trimmed_arg);
-			ft_putendl_fd(ERROR_MSG, 2);
+			ft_putendl_fd(ERROR_MSG, STDERR_FILENO);
 			return (TRUE);
 		}
 		free(trimmed_arg);
-		i++;
-	}
-	return (FALSE);
-}
-
-static t_bool	is_duplicate(char **args, char *arg, int index)
-{
-	int	i;
-
-	i = 0;
-	while (i < index)
-	{
-		if (are_strs_equal(args[i], arg))
-			return (TRUE);
 		i++;
 	}
 	return (FALSE);

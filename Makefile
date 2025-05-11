@@ -36,6 +36,7 @@ SOURCES =	$(SRCS_DIR)/main.c 					\
 			$(SORT_DIR)/way.c					\
 			$(SORT_DIR)/execute.c				\
 			$(UTILS_DIR)/check_args.c			\
+			$(UTILS_DIR)/check_duplicates.c		\
 			$(UTILS_DIR)/arrange_args.c			\
 			$(UTILS_DIR)/casual_utils.c			\
 			$(UTILS_DIR)/position.c				\
@@ -54,6 +55,7 @@ BONUS_SOURCES =	$(BONUS_DIR)/checker_bonus.c		\
 				$(OPERATIONS_DIR)/rotate.c			\
 				$(OPERATIONS_DIR)/reverse_rotate.c	\
 				$(UTILS_DIR)/check_args.c			\
+				$(UTILS_DIR)/check_duplicates.c		\
 				$(UTILS_DIR)/arrange_args.c			\
 				$(UTILS_DIR)/casual_utils.c			\
 

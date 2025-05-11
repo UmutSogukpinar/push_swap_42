@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: usogukpi <usogukpi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 20:52:12 by usogukpi          #+#    #+#             */
-/*   Updated: 2024/10/24 20:52:15 by usogukpi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-int static	ft_is_set(char c, char const *set)
+static int	ft_is_set(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +14,7 @@ int static	ft_is_set(char c, char const *set)
 	return (0);
 }
 
-int static	ft_trimlen(char const *s1, char const *set)
+static int	ft_trimlen(char const *s1, char const *set)
 {
 	int	j;
 	int	counter;
