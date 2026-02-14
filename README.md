@@ -45,7 +45,6 @@
   - [Count number of moves](#count-number-of-moves)
   - [Validate with checker](#validate-with-checker)
 - [Checker](#checker)
-- [Scoring](#scoring)
 - [Error Handling](#error-handling)
 
 ---
@@ -226,27 +225,6 @@ Minimal idea:
 2. Read operations from stdin.
 3. Execute operations on stacks.
 4. If A is sorted and B is empty → `OK`, else → `KO`.
-
----
-
-## Scoring
-
-Limits can vary by subject version, but common expectations are:
-
-* **3 numbers**: minimal moves
-* **5 numbers**: very low moves
-* **100 numbers**:
-
-  * excellent: `< 700`
-  * good: `< 900`
-  * ok: `< 1100`
-* **500 numbers**:
-
-  * excellent: `< 5500`
-  * good: `< 7000`
-  * ok: `< 8500`
-
-> Update these thresholds if your subject specifies different ones.
 
 ---
 
